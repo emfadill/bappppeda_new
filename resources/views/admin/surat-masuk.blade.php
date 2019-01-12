@@ -3,60 +3,63 @@
 @section('title','Form Surat Masuk')
 
 @section('content')
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
+    {{--<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">--}}
+    {{--<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>--}}
+    {{--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>--}}
     <style type="text/css">
         body{
-        margin-top:40px;
+            margin-top:40px;
+        }
+
+        .cursor-not-allow {
+            cursor: not-allowed !important;
         }
 
         .stepwizard-step p {
-        margin-top: 10px;
+            margin-top: 10px;
         }
 
         .stepwizard-row {
-        display: table-row;
+            display: table-row;
         }
 
         .stepwizard {
-        display: table;
-        width: 100%;
-        position: relative;
+            display: table;
+            width: 100%;
+            position: relative;
         }
 
         .stepwizard-step button[disabled] {
-        opacity: 1 !important;
-        filter: alpha(opacity=100) !important;
+            opacity: 1 !important;
+            filter: alpha(opacity=100) !important;
         }
 
         .stepwizard-row:before {
-        top: 14px;
-        bottom: 0;
-        position: absolute;
-        content: " ";
-        width: 100%;
-        height: 1px;
-        background-color: #ccc;
-        z-order: 0;
+            top: 14px;
+            bottom: 0;
+            position: absolute;
+            content: " ";
+            width: 100%;
+            height: 1px;
+            background-color: #ccc;
+            z-order: 0;
 
         }
 
         .stepwizard-step {
-        display: table-cell;
-        text-align: center;
-        position: relative;
+            display: table-cell;
+            text-align: center;
+            position: relative;
         }
 
         .btn-circle {
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        padding: 6px 0;
-        font-size: 12px;
-        line-height: 1.428571429;
-        border-radius: 15px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            padding: 6px 0;
+            font-size: 12px;
+            line-height: 1.428571429;
+            border-radius: 15px;
         }
     </style>
       <!-- Page Content -->
@@ -86,16 +89,16 @@
                             <div class="stepwizard">
                                 <div class="stepwizard-row setup-panel">
                                     <div class="stepwizard-step">
-                                        <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
-                                        <p>Step 1</p>
+                                        <a href="#step-1" class="btn btn-primary btn-circle">1</a>
+                                        <p>Scan atau Upload Surat Masuk</p>
                                     </div>
                                     <div class="stepwizard-step">
-                                        <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-                                        <p>Step 2</p>
+                                        <a href="#step-2" class="btn btn-default btn-circle cursor-not-allow" disabled>2</a>
+                                        <p>Masukkan Title dan Subject</p>
                                     </div>
                                     <div class="stepwizard-step">
-                                        <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                                        <p>Step 3</p>
+                                        <a href="#step-3" class="btn btn-default btn-circle cursor-not-allow" disabled>3</a>
+                                        <p>Pilih Jenis Surat</p>
                                     </div>
                                 </div>
                             </div>
@@ -107,10 +110,10 @@
                                         <div class="col-md-12">
                                             <h3> Step 1</h3>
                                             <div class="form-group {{ !$errors->has('file') ?: 'has-error' }}">
-                                                <input type="file" id="input-file-now-custom-2" name="file" class="dropify" data-height="500" required="required" />
+                                                <input type="file" id="input-file-now-custom-2" name="file" class="dropify" data-height="500" required="required" data-show-remove="false" />
 
                                             </div>
-                                            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                                            <button class="btn btn-primary nextBtn btn-lg pull-right cursor-not-allow" type="button" >Next</button>
                                         </div>
                                     </div>
                                 </div>
@@ -151,10 +154,9 @@
                                                 <div class="row">
                                                     <label class="col-xs-3 control-label">Tgl Surat Masuk</label>
                                                     <div class="col-xs-5">
-
-                                                        <input type="date" class="form-control" id="datepicker-autoclose" placeholder="mm/dd/yyyy" name="tgl_surat_masuk" required><span class="input-group-addon"><i class="icon-calender"></i></span>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" id="datepicker-autoclosed" placeholder="mm/dd/yyyy" name="tgl_surat_masuk" required> <span class="input-group-addon"><i class="icon-calender"></i></span> </div>
                                                     </div>
-
                                                 </div>
 
                                             </div>
@@ -168,16 +170,14 @@
                                             <h3> Step 3</h3>
                                             <div class="form-group">
                                                 <div class="radio radio-danger">
-                                                    <input type="radio" name="jenis_surat" id="radio6" value="Express" style="display: none">
-
-                                                    <label for="radio6" class="btn btn-danger btn-rounded waves-effect waves-light"><i class="fa fa-envelope-o"> Express</i> </label>
+                                                    <input type="radio" name="jenis_surat" id="radio6" value="Express">
+                                                    <label for="radio6" class="btn btn-danger btn-rounded"><i class="fa fa-envelope-o"> Express</i> </label>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="radio radio-danger">
-                                                    <input type="radio" name="jenis_surat" id="radio7" value="Standar" style="display: none">
-
-                                                    <label for="radio7" class="btn btn-success btn-rounded waves-effect waves-light"><i class="fa fa-envelope-o"> Standar</i> </label>
+                                                    <input type="radio" name="jenis_surat" id="radio7" value="Standar">
+                                                    <label for="radio7" class="btn btn-success btn-rounded"><i class="fa fa-envelope-o"> Standar</i> </label>
                                                 </div>
                                             </div>
                                             <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
@@ -271,12 +271,25 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
                 <!-- /.row -->
                 <script src="{{asset('js/app.js')}}"></script>
                 <script src="js/sweetalert.min.js"></script>
                 @include('sweet::alert')
     <script type="text/javascript">
         $(document).ready(function () {
+
+            $('#input-file-now-custom-2').change(function () {
+               if ($(this).val() === '' || $(this).val() === null) {
+                   $('.nextBtn').addClass('cursor-not-allow');
+               } else {
+                   $('.nextBtn').removeClass('cursor-not-allow');
+               }
+            });
+            $('.dropify-clear').click( function () {
+                $('.nextBtn').addClass('cursor-not-allow');
+            });
 
             var navListItems = $('div.setup-panel div a'),
                 allWells = $('.setup-content'),
@@ -318,6 +331,13 @@
             });
 
             $('div.setup-panel div a.btn-primary').trigger('click');
+
+            $('#datepicker-autoclosed').datepicker({
+                autoclose: true,
+                todayHighlight: true,
+                orientation: 'auto',
+                format: 'yyyy/mm/dd'
+            });
         });
 
     </script>

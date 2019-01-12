@@ -38,3 +38,6 @@ Route::post('/pengaturan-akun/add-akun/create', 'Admin\PengaturanController@crea
 Route::get('/pengaturan-akun/edit-akun/{id}', 'Admin\PengaturanController@edit')->name('admin.edit-akun');
 Route::patch('/pengaturan-akun/update/{id}', 'Admin\PengaturanController@update')->name('admin.pengaturan.update');
 Route::delete('/pengaturan-akun/delete/{id}', 'Admin\PengaturanController@destroy')->name('admin.pengaturan.delete');
+
+//notifikasi
+Route::get('/notif', 'Admin\FirebaseController@index');

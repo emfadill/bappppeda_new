@@ -4,13 +4,15 @@
 @section('title','Form Surat Keluar')
 
 @section('content')
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    {{--<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">--}}
 
     <style type="text/css">
         body{
             margin-top:40px;
+        }
+
+        .cursor-not-allow {
+            cursor: not-allowed !important;
         }
 
         .stepwizard-step p {
@@ -114,7 +116,7 @@
                                                 <input type="file" id="input-file-now-custom-2" name="file" class="dropify" data-height="500" required="required" />
 
                                             </div>
-                                            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                                            <button class="btn btn-primary nextBtn btn-lg pull-right cursor-not-allow" type="button" >Next</button>
                                         </div>
                                     </div>
                                 </div>
@@ -164,8 +166,8 @@
                                                 <div class="row">
                                                     <label class="col-xs-3 control-label">Tgl Surat Keluar</label>
                                                     <div class="col-xs-5">
-
-                                                        <input type="date" class="form-control" id="datepicker-autoclose" placeholder="mm/dd/yyyy" name="tgl_surat_keluar" required><span class="input-group-addon"><i class="icon-calender"></i></span>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" id="datepicker-autoclosed" placeholder="mm/dd/yyyy" name="tgl_surat_keluar" required><span class="input-group-addon"><i class="icon-calender"></i></span>
                                                     </div>
 
                                                 </div>
@@ -280,55 +282,76 @@
                             </div>--}}
                     </div>
                 </div>
+                </div>
+            </div>
+        </div>
                 <!-- /.row -->
                     <script src="{{asset('js/app.js')}}"></script>
                     <script src="js/sweetalert.min.js"></script>
                     @include('sweet::alert')
 
-                    <script type="text/javascript">
-                        $(document).ready(function () {
+    <script type="text/javascript">
+        $(document).ready(function () {
 
-                            var navListItems = $('div.setup-panel div a'),
-                                allWells = $('.setup-content'),
-                                allNextBtn = $('.nextBtn');
+            $('#input-file-now-custom-2').change(function () {
+                if ($(this).val() === '' || $(this).val() === null) {
+                    $('.nextBtn').addClass('cursor-not-allow');
+                } else {
+                    $('.nextBtn').removeClass('cursor-not-allow');
+                }
+            });
+            $('.dropify-clear').click( function () {
+                $('.nextBtn').addClass('cursor-not-allow');
+            });
 
-                            allWells.hide();
+            var navListItems = $('div.setup-panel div a'),
+                allWells = $('.setup-content'),
+                allNextBtn = $('.nextBtn');
 
-                            navListItems.click(function (e) {
-                                e.preventDefault();
-                                var $target = $($(this).attr('href')),
-                                    $item = $(this);
+            allWells.hide();
 
-                                if (!$item.hasClass('disabled')) {
-                                    navListItems.removeClass('btn-primary').addClass('btn-default');
-                                    $item.addClass('btn-primary');
-                                    allWells.hide();
-                                    $target.show();
-                                    $target.find('input:eq(0)').focus();
-                                }
-                            });
+            navListItems.click(function (e) {
+                e.preventDefault();
+                var $target = $($(this).attr('href')),
+                    $item = $(this);
 
-                            allNextBtn.click(function(){
-                                var curStep = $(this).closest(".setup-content"),
-                                    curStepBtn = curStep.attr("id"),
-                                    nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-                                    curInputs = curStep.find("input[type='text'],input[type='url'],input[type='file'],input[type='date']"),
-                                    isValid = true;
+                if (!$item.hasClass('disabled')) {
+                    navListItems.removeClass('btn-primary').addClass('btn-default');
+                    $item.addClass('btn-primary');
+                    allWells.hide();
+                    $target.show();
+                    $target.find('input:eq(0)').focus();
+                }
+            });
 
-                                $(".form-group").removeClass("has-error");
-                                for(var i=0; i<curInputs.length; i++){
-                                    if (!curInputs[i].validity.valid){
-                                        isValid = false;
-                                        $(curInputs[i]).closest(".form-group").addClass("has-error");
-                                    }
-                                }
+            allNextBtn.click(function(){
+                var curStep = $(this).closest(".setup-content"),
+                    curStepBtn = curStep.attr("id"),
+                    nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+                    curInputs = curStep.find("input[type='text'],input[type='url'],input[type='file'],input[type='date']"),
+                    isValid = true;
 
-                                if (isValid)
-                                    nextStepWizard.removeAttr('disabled').trigger('click');
-                            });
+                $(".form-group").removeClass("has-error");
+                for(var i=0; i<curInputs.length; i++){
+                    if (!curInputs[i].validity.valid){
+                        isValid = false;
+                        $(curInputs[i]).closest(".form-group").addClass("has-error");
+                    }
+                }
 
-                            $('div.setup-panel div a.btn-primary').trigger('click');
-                        });
+                if (isValid)
+                    nextStepWizard.removeAttr('disabled').trigger('click');
+            });
 
-                    </script>
+            $('div.setup-panel div a.btn-primary').trigger('click');
+
+            $('#datepicker-autoclosed').datepicker({
+                autoclose: true,
+                todayHighlight: true,
+                orientation: 'auto',
+                format: 'yyyy/mm/dd'
+            });
+        });
+
+    </script>
 @endsection

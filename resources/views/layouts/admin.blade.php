@@ -33,11 +33,14 @@
 <link href="{{asset('admin/plugins/bower_components/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
 <!-- page CSS -->
 <link href="{{asset('admin/plugins/bower_components/custom-select/custom-select.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset('admin/plugins/bower_components/clockpicker/dist/jquery-clockpicker.min.css')}}" rel="stylesheet">
 <link href="{{asset('admin/plugins/bower_components/switchery/dist/switchery.min.css')}}" rel="stylesheet" />
 <link href="{{asset('admin/plugins/bower_components/bootstrap-select/bootstrap-select.min.css')}}" rel="stylesheet" />
 <link href="{{asset('admin/plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css')}}" rel="stylesheet" />
 <link href="{{asset('admin/plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css')}}" rel="stylesheet" />
 <link href="{{asset('admin/plugins/bower_components/multiselect/css/multi-select.css')}}" rel="stylesheet" type="text/css" />
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -229,6 +232,8 @@
 <!-- Date range Plugin JavaScript -->
 <script src="{{asset('admin/plugins/bower_components/timepicker/bootstrap-timepicker.min.js')}}"></script>
 <script src="{{asset('admin/plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+<!-- Clock Plugin JavaScript -->
+<script src="{{asset('admin/plugins/bower_components/clockpicker/dist/jquery-clockpicker.min.js')}}"></script>
 <script>
     $(document).ready(function() {
         // Basic
@@ -552,7 +557,7 @@
     });
     // Date Picker
     jQuery('.mydatepicker, #datepicker').datepicker();
-    jQuery('#datepicker-autoclose').datepicker({
+    $('#datepicker-autoclose').datepicker({
         autoclose: true,
         todayHighlight: true
     });
