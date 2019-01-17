@@ -22,7 +22,10 @@ Route::get('/', 'Admin\AdminController@index')->name('admin.home');
 //surat-masuk
 Route::get('/suratmasuk', 'Admin\SuratMasukController@index')->name('admin.surat-masuk');
 Route::post('/suratmasuk/upload', 'Admin\SuratMasukController@store')->name('admin.surat-masuk.upload');
-
+//preview-pdf
+Route::get('/suratmasuk/view/{id}', ['as'=>'view_pdf_masuk','uses'=>'Admin\AdminController@view_pdf']);
+Route::get('/suratmasuk/view_pdf/{id}', ['as'=>'view_pdf','uses'=>'Admin\AdminController@view']);
+Route::get('/suratmasuk/view_tes/{id}', ['as'=>'view_pdf_tes','uses'=>'Admin\AdminController@showTenderDocs']);
 
 //surat-keluar
 Route::get('/suratkeluar', 'Admin\SuratKeluarController@index')->name('admin.surat-keluar');
@@ -41,3 +44,8 @@ Route::delete('/pengaturan-akun/delete/{id}', 'Admin\PengaturanController@destro
 
 //notifikasi
 Route::get('/notif', 'Admin\FirebaseController@index');
+
+//post-notif
+Route::resource('post', 'PostController');
+
+

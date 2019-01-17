@@ -1,7 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyB-x5c5XoOcBFLlkO9lCDVH0QymiX2xkp0",
+            authDomain: "bappppeda.firebaseapp.com",
+            databaseURL: "https://bappppeda.firebaseio.com",
+            projectId: "bappppeda",
+            storageBucket: "bappppeda.appspot.com",
+            messagingSenderId: "1050384502816"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-messaging.js"></script>
+
+    <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
@@ -198,6 +215,7 @@
 
 <!-- jQuery -->
 <script src="{{asset('admin/plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="{{asset('admin/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <!-- Menu Plugin JavaScript -->
@@ -594,6 +612,33 @@
             days: 6
         }
     });
+    </script>
+
+    <script type="text/javascript">
+
+        var wcppPingTimeout_ms = 10000; //10 sec
+        var wcppPingTimeoutStep_ms = 500; //0.5 sec
+
+
+        function wcppDetectOnSuccess(){
+            // WCPP utility is installed at the client side
+            // redirect to WebClientPrint sample page
+
+            // get WCPP version
+            var wcppVer = arguments[0];
+            if(wcppVer.substring(0, 1) == "4")
+                window.location.href = '{{action('HomeController@printPDF')}}';
+            else //force to install WCPP v4.0
+                wcppDetectOnFailure();
+        }
+
+        function wcppDetectOnFailure() {
+            // It seems WCPP is not installed at the client side
+            // ask the user to install it
+            $('#msgInProgress').hide();
+            $('#msgInstallWCPP').show();
+        }
+
     </script>
 
 </body>

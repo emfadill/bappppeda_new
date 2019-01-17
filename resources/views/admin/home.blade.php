@@ -50,8 +50,10 @@
                                             <td>{{$data->tgl_suratmasuk}}</td>
                                             <td>{{$data->tgl_penyelesaian}}</td>
                                             <td>{{$data->jenis_surat}}</td>
-                                            <td><a class="btn btn-block btn-primary fa fa-download" href="{{asset('storage/surat_masuk/'.$data->dokumen)}}"></a></td>
-                                            <td><a class="btn btn-block btn-primary fa fa-download" href="{{asset('storage/surat_masuk/disposisi'.$data->disposisi)}}"></a></td>
+                                            <td><a href="#" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#largeModal">Tampil PDF</a>
+                                                <a href="{{action('HomeController@printPDF')}}" class="btn btn-lg btn-primary">Tampil PDF</a>
+                                            </td>
+                                            <td><a class="btn btn-block btn-primary fa fa-download" href="{{asset('storage/surat_masuk/disposisi/'.$data->disposisi)}}"></a></td>
                                             <td>{{$data->kepada}}</td>
                                             <td>{{$data->status}}</td>
                                                 <form action="{{ route('admin.pengaturan.delete',$data->id) }}" id="delete" method="POST">  {{ csrf_field() }}
@@ -63,6 +65,24 @@
                                             </td>
                                             </form>
                                         </tr>
+                                        <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title" id="myModalLabel">PDF</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <iframe src="{{asset('storage/surat_masuk/'.$data->dokumen)}}" height="600" width="850" frameborder="0"></iframe>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     @endforeach
                                     </tbody>
                                 </table>
@@ -116,6 +136,10 @@
                                             <td>{{$data->tgl_no_suratkeluar}}</td>
                                             <td>{{$data->tgl_suratkeluar}}</td>
                                             <td>{{$data->jenis_surat}}</td>
+                                            <object data='storage/surat_keluar/.$data->dokumen#toolbar=0&statusbar=0&navpanes=0'
+                                                    type='application/pdf'
+                                                    width='100%'
+                                                    height='100%'>
                                             <td><a class="btn btn-block btn-primary fa fa-download" href="{{asset('storage/surat_keluar/'.$data->dokumen)}}"></a></td>
                                             <td><a class="btn btn-block btn-primary fa fa-download" href="{{asset('storage/surat_keluar/disposisi/'.$data->disposisi)}}"></a></td>
                                             <td>{{$data->kepada}}</td>
@@ -141,4 +165,6 @@
 
 
                 <!-- /.row -->
+                <script src="{{asset('js/pdfobject.js')}}"></script>
+                <script>PDFObject.embed("{{asset('storage/surat_keluar/'.$data->dokumen)}}", "#example1");</script>
 @endsection
