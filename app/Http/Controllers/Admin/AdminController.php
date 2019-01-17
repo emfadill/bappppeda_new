@@ -46,7 +46,7 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function printPDF(){
-        return view('home.printPDF');
+        return view('admin.printPDF');
     }
 
     /**

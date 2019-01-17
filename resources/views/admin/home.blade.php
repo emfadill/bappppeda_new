@@ -51,7 +51,7 @@
                                             <td>{{$data->tgl_penyelesaian}}</td>
                                             <td>{{$data->jenis_surat}}</td>
                                             <td><a href="#" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#largeModal">Tampil PDF</a>
-                                                <a href="{{action('HomeController@printPDF')}}" class="btn btn-lg btn-primary">Tampil PDF</a>
+                                                <a href="{{action('Admin\AdminController@printPDF')}}" class="btn btn-lg btn-primary">Tampil PDF</a>
                                             </td>
                                             <td><a class="btn btn-block btn-primary fa fa-download" href="{{asset('storage/surat_masuk/disposisi/'.$data->disposisi)}}"></a></td>
                                             <td>{{$data->kepada}}</td>

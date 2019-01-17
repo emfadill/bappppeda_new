@@ -627,7 +627,7 @@
             // get WCPP version
             var wcppVer = arguments[0];
             if(wcppVer.substring(0, 1) == "4")
-                window.location.href = '{{action('HomeController@printPDF')}}';
+                window.location.href = '{{action('Admin\AdminController@printPDF')}}';
             else //force to install WCPP v4.0
                 wcppDetectOnFailure();
         }
