@@ -23,7 +23,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="emfadill">
-<link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/plugins/images/favicon.png')}}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/plugins/images/logo_bpd.ico')}}">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <title>@yield('title')</title>
 <!-- Bootstrap Core CSS -->
@@ -80,16 +80,17 @@
                 <div class="top-left-part">
                     <a class="logo" href="">
                         <!-- Logo icon image, you can use font-icon also -->
-                        <b><img src="{{asset('admin/plugins/images/pixeladmin-logo.png')}}" alt="home" /></b>
+                        <b><img src="{{asset('admin/plugins/images/logo-bappppeda-kecil2.png')}}" alt="home" /></b>
                         <!-- Logo text image you can use text also -->
-                        <span class="hidden-xs"><img src="{{asset('admin/plugins/images/pixeladmin-text.png')}}" alt="home" /></span>
+                        {{--<span class="hidden-xs"><img src="{{asset('admin/plugins/images/pixeladmin-text.png')}}" alt="home" /></span>--}}
+                        <b>BAPPPPEDA</b>
                     </a>
                 </div>
                 <!-- /Logo -->
                 <!-- Search input and Toggle icon -->
                 <ul class="nav navbar-top-links navbar-left hidden-xs">
-                    <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
-                    
+
+
                 </ul>
                 <!-- This is the message dropdown -->
                 <ul class="nav navbar-top-links navbar-right pull-right">
@@ -146,7 +147,7 @@
                     <!-- /.Task dropdown -->
                     <!-- .user dropdown -->
                     <li class="dropdown">
-                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="{{asset('admin/plugins/images/users/varun.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Steave</b> </a>
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="{{asset('admin/plugins/images/users/logo-bappppeda-user.png')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Steave</b> </a>
                         <ul class="dropdown-menu dropdown-user animated flipInY">
                             <li><a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
