@@ -1,0 +1,1189 @@
+{
+	"info": {
+		"_postman_id": "7bd4a8f4-bc07-4979-be29-082810a8e1ce",
+		"name": "bappppeda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Subid123",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qwezxc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/user/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "data kabid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzk1NDc0NSwiZXhwIjoxNjA3OTU0Njg1LCJuYmYiOjE1NDc5NTQ3NDUsImp0aSI6ImpCQWdlM2VBSWZZdHZtOGcifQ.ih055NI5HLMV5fGqPo-KL4o7mpzXNsBsQqyIRSPzOSI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/data-kabid",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"data-kabid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "data subid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzk1NDc0NSwiZXhwIjoxNjA3OTU0Njg1LCJuYmYiOjE1NDc5NTQ3NDUsImp0aSI6ImpCQWdlM2VBSWZZdHZtOGcifQ.ih055NI5HLMV5fGqPo-KL4o7mpzXNsBsQqyIRSPzOSI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/data-subid",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"data-subid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view SM  kepala bappppeda",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzk1MDI4MywiZXhwIjoxNjA3OTUwMjIzLCJuYmYiOjE1NDc5NTAyODMsImp0aSI6Im9kaDRRbW1yQVR0MVpzSTgifQ.HGCuRWGZUZuywmNJSzegHjRv0F7jbDRL6nvxWrU6JQc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Kepalabpd",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qwezxc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/surat-masuk",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"surat-masuk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view SK  kepala bappppeda",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzk1MDI4MywiZXhwIjoxNjA3OTUwMjIzLCJuYmYiOjE1NDc5NTAyODMsImp0aSI6Im9kaDRRbW1yQVR0MVpzSTgifQ.HGCuRWGZUZuywmNJSzegHjRv0F7jbDRL6nvxWrU6JQc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Kepalabpd",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qwezxc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/surat-keluar",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"surat-keluar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view SK  KABAP Detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzk1MDI4MywiZXhwIjoxNjA3OTUwMjIzLCJuYmYiOjE1NDc5NTAyODMsImp0aSI6Im9kaDRRbW1yQVR0MVpzSTgifQ.HGCuRWGZUZuywmNJSzegHjRv0F7jbDRL6nvxWrU6JQc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/surat-keluar/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"surat-keluar",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view SM  KABAP Detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzk1MDI4MywiZXhwIjoxNjA3OTUwMjIzLCJuYmYiOjE1NDc5NTAyODMsImp0aSI6Im9kaDRRbW1yQVR0MVpzSTgifQ.HGCuRWGZUZuywmNJSzegHjRv0F7jbDRL6nvxWrU6JQc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Kepalabpd",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qwezxc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/surat-masuk",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"surat-masuk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view DM KABAP Detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzg5ODUwNCwiZXhwIjoxNTQ3OTAyMTA0LCJuYmYiOjE1NDc4OTg1MDQsImp0aSI6ImVLU3VuMm5UY3lDMkZyQW0ifQ.09A1h0g8lbT1vVK43ScOc9rlBLIf2TLDP5OkWiGtGpQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Kepalabpd",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qwezxc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/surat-masuk-disposisi-kabid/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"surat-masuk-disposisi-kabid",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view DK KABAP Detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzg5ODUwNCwiZXhwIjoxNTQ3OTAyMTA0LCJuYmYiOjE1NDc4OTg1MDQsImp0aSI6ImVLU3VuMm5UY3lDMkZyQW0ifQ.09A1h0g8lbT1vVK43ScOc9rlBLIf2TLDP5OkWiGtGpQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Kepalabpd",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qwezxc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/surat-masuk-disposisi-kabid/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"surat-masuk-disposisi-kabid",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view DM per kabid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzk1MDExMCwiZXhwIjoxNjA3OTUwMDUwLCJuYmYiOjE1NDc5NTAxMTAsImp0aSI6IllENWU1aDl0dkc4dGx4TFMifQ.NsUfLyMAlmAekQWOLiJGDgNbrBIvVlHBh6Esv9UM8ZU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/surat-masuk/disposisi/kabid/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"surat-masuk",
+						"disposisi",
+						"kabid",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view DK per kabid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzk1MDExMCwiZXhwIjoxNjA3OTUwMDUwLCJuYmYiOjE1NDc5NTAxMTAsImp0aSI6IllENWU1aDl0dkc4dGx4TFMifQ.NsUfLyMAlmAekQWOLiJGDgNbrBIvVlHBh6Esv9UM8ZU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/surat-masuk/disposisi/kabid/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"surat-masuk",
+						"disposisi",
+						"kabid",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view DM per subid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzk3NDIzNywiZXhwIjoyMTQ3NDgzNjQ3LCJuYmYiOjE1NDc5NzQyMzcsImp0aSI6Ik5OQnFTaE1qZXc1S09SVFkifQ.XNPla-oBYR9FV5v0IAKEDyLlqdas4KQtVhp_lpzs1bg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/surat-masuk/disposisi/subid/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"surat-masuk",
+						"disposisi",
+						"subid",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view DK per subid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzk3NDIzNywiZXhwIjoyMTQ3NDgzNjQ3LCJuYmYiOjE1NDc5NzQyMzcsImp0aSI6Ik5OQnFTaE1qZXc1S09SVFkifQ.XNPla-oBYR9FV5v0IAKEDyLlqdas4KQtVhp_lpzs1bg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/surat-masuk/disposisi/subid/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"surat-masuk",
+						"disposisi",
+						"subid",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view DM detail kabid",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzg5ODc4NiwiZXhwIjoxNjA3ODk4NzI2LCJuYmYiOjE1NDc4OTg3ODYsImp0aSI6IjRJTDRRd2FSWnY0VnQ5YlAifQ.FF_E7Qi-c4dZrjaBPQnkRa1WBUOhWQDakyhLcPRCkTU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Kepalabpd",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qwezxc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/surat-masuk/disposisi/kabid/7",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"surat-masuk",
+						"disposisi",
+						"kabid",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view DK detail kabid",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzg5ODc4NiwiZXhwIjoxNjA3ODk4NzI2LCJuYmYiOjE1NDc4OTg3ODYsImp0aSI6IjRJTDRRd2FSWnY0VnQ5YlAifQ.FF_E7Qi-c4dZrjaBPQnkRa1WBUOhWQDakyhLcPRCkTU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Kepalabpd",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qwezxc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/surat-masuk/disposisi/kabid/7",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"surat-masuk",
+						"disposisi",
+						"kabid",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view DM detail subid",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzg5ODc4NiwiZXhwIjoxNjA3ODk4NzI2LCJuYmYiOjE1NDc4OTg3ODYsImp0aSI6IjRJTDRRd2FSWnY0VnQ5YlAifQ.FF_E7Qi-c4dZrjaBPQnkRa1WBUOhWQDakyhLcPRCkTU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Kepalabpd",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qwezxc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/surat-masuk/disposisi/subid/7",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"surat-masuk",
+						"disposisi",
+						"subid",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view DK detail subid",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzg5ODc4NiwiZXhwIjoxNjA3ODk4NzI2LCJuYmYiOjE1NDc4OTg3ODYsImp0aSI6IjRJTDRRd2FSWnY0VnQ5YlAifQ.FF_E7Qi-c4dZrjaBPQnkRa1WBUOhWQDakyhLcPRCkTU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Kepalabpd",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qwezxc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/surat-keluar/disposisi/subid/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"surat-keluar",
+						"disposisi",
+						"subid",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "teruskan SM kekabid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzk1MDI4MywiZXhwIjoxNjA3OTUwMjIzLCJuYmYiOjE1NDc5NTAyODMsImp0aSI6Im9kaDRRbW1yQVR0MVpzSTgifQ.HGCuRWGZUZuywmNJSzegHjRv0F7jbDRL6nvxWrU6JQc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "tgl_penyelesaian",
+							"value": "2019-01-20",
+							"type": "text"
+						},
+						{
+							"key": "kepada",
+							"value": "3,7,",
+							"type": "text"
+						},
+						{
+							"key": "instruksi",
+							"value": "ngewe",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/surat-masuk/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"surat-masuk",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "teruskan SK kekabid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzk1MDI4MywiZXhwIjoxNjA3OTUwMjIzLCJuYmYiOjE1NDc5NTAyODMsImp0aSI6Im9kaDRRbW1yQVR0MVpzSTgifQ.HGCuRWGZUZuywmNJSzegHjRv0F7jbDRL6nvxWrU6JQc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "tgl_penyelesaian",
+							"value": "2019-01-25",
+							"type": "text"
+						},
+						{
+							"key": "kepada",
+							"value": "3,16,",
+							"type": "text"
+						},
+						{
+							"key": "instruksi",
+							"value": "ngewe",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": ""
+						},
+						{
+							"key": "disposisi",
+							"type": "file",
+							"src": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/surat-keluar/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"surat-keluar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "teruskan DM ke subid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzk1MDI4MywiZXhwIjoxNjA3OTUwMjIzLCJuYmYiOjE1NDc5NTAyODMsImp0aSI6Im9kaDRRbW1yQVR0MVpzSTgifQ.HGCuRWGZUZuywmNJSzegHjRv0F7jbDRL6nvxWrU6JQc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "tgl_penyelesaian",
+							"value": "2019-01-20",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "kepada",
+							"value": "4,6",
+							"type": "text"
+						},
+						{
+							"key": "instruksi",
+							"value": "ngewe",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/surat-masuk/disposisi/subid/7",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"surat-masuk",
+						"disposisi",
+						"subid",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "teruskan DK ke subid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvdjEvdXNlci9sb2dpbiIsImlhdCI6MTU0Nzk1MDI4MywiZXhwIjoxNjA3OTUwMjIzLCJuYmYiOjE1NDc5NTAyODMsImp0aSI6Im9kaDRRbW1yQVR0MVpzSTgifQ.HGCuRWGZUZuywmNJSzegHjRv0F7jbDRL6nvxWrU6JQc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "tgl_penyelesaian",
+							"value": "2019-01-20",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "kepada",
+							"value": "4,6,",
+							"type": "text"
+						},
+						{
+							"key": "instruksi",
+							"value": "ngewe",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/surat-keluar/disposisi/kabid/9",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"surat-keluar",
+						"disposisi",
+						"kabid",
+						"9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

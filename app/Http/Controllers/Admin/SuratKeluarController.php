@@ -75,7 +75,8 @@ class SuratKeluarController extends Controller
                     'tgl_suratkeluar' => $request->get('tgl_surat_keluar'),
                     'jenis_surat' => $request->get('jenis_surat'),
                     'dokumen' => $name,
-                    'url_dokumen' => $path
+                    'url_dokumen' => $path,
+                    'status' => 'Terkirim'
                 ]);
                 if ($newSuratKeluar->save()) {
                     Alert::success('Data Surat Keluar Berhasil ditambahkan', 'Berhasil ditambahkan!');

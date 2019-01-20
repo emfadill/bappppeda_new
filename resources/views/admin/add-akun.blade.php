@@ -59,15 +59,6 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Jabatan</label>
-                                    <div class="col-sm-9">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputJabatan" placeholder="Masukkan Jabatan" name="jabatan" value="{{ old('jabatan')}}">
-                                            <div class="input-group-addon"><i class="ti-user"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
                                     <label for="inputPassword3" class="col-sm-3 control-label">Password*</label>
                                     <div class="col-sm-9">
                                         <div class="input-group">
@@ -86,28 +77,85 @@
                                     </div>
                                 </div>
                                  <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Level</label>
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Jabatan</label>
                                     <div class="col-sm-9">
                                         <div class="input-group">
-                                            <select class="selectpicker" data-style="form-control" name="level">
-                                        <option value="1">Kepala Bappppeda</option>
-                                        <option value="2">Sekretaris</option>
-                                        <option value="2">Kepala Bidang</option>
-                                        <option value="3">Sub Bidang</option>
+                                            <select class="form-control selectpicker" data-style="form-control" name="jabatan" id="jabatan">
+                                        <option value="">Pilih</option>
+                                        @foreach ($jabatan as $jbtn)
+                                        <option value="{{$jbtn->id}}">{{$jbtn->name}}</option>
+                                        @endforeach
                                     </select>
                                         </div>
                                     </div>
                                 </div>
-                              
+                              <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Kepala Bidang</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+                                            <select class="form-control form-control-lg" data-style="form-control" name="kabid" id="kabid" disable="true" >
+                                        <option value="" disable="true" selected="true">Pilih</option>
+                                    </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Sub Bidang</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+                                            <select class="form-control form-control-lg "  data-style="form-control" name="subid" id="subid" disable="true">
+                                        <option value="" disable="true" selected="true">Pilih</option>
+                                    </select>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="form-group m-b-0">
                                     <div class="col-sm-offset-3 col-sm-9 text-right">
                                         <button type="submit" class="btn btn-info waves-effect waves-light m-t-10">Tambah</button>
                                     </div>
                                 </div>
+                                <div class="form-group m-b-0">
+                                    <div class="col-sm-offset-3 col-sm-9 text-right">
+                                        <a href="{{route('admin.pengaturan-akun')}}" class="btn btn-info waves-effect waves-light m-t-10">Kembali</a>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>
+                  
 <script src="{{asset('js/app.js')}}"></script>
 <script src="js/sweetalert.min.js"></script>
+  <script>
+    $('#jabatan').on('change', function(e){
+        console.log(e);
+        var jabatan_id = e.target.value;
+        $.get('/json-kabid?jabatan_id=' + jabatan_id,function(data) {
+            $('#kabid').empty();
+            $('#kabid').append('<option value="" disable="true" selected="true">Pilih</option>');
+
+             $('#subid').empty();
+            $('#subid').append('<option value="" disable="true" selected="true">Pilih</option>');
+
+            $.each(data, function(index, distObj){
+            console.log(data);
+              $('#kabid').append('<option value="'+ distObj.id +'">'+ distObj.name +'</option>');
+            })
+          });
+        });
+    $('#kabid').on('change', function(e){
+        console.log(e);
+        var kabid_id = e.target.value;
+        $.get('/json-subid?kabid_id=' + kabid_id,function(data) {
+            $('#subid').empty();
+            $('#subid').append('<option value="" disable="true" selected="true">Pilih</option>');
+
+            $.each(data, function(index, distObj){
+            console.log(data);
+              $('#subid').append('<option value="'+ distObj.id +'">'+ distObj.name +'</option>');
+            })
+          });
+        });
+
+                    </script>
 @include('sweet::alert')
 @endsection

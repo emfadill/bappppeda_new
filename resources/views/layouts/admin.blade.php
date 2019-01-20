@@ -196,7 +196,15 @@
                     </li>
                     <li><a href="{{route('admin.histori')}}" class="waves-effect"><i data-icon="f" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Histori Surat</span></a> 
                     </li>
-                    <li><a href="{{route('admin.pengaturan-akun')}}" class="waves-effect "><i data-icon="&#xe005;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Pengaturan Akun</span></a> </li>
+                    <li>
+                        <a href="javascript:void(0)" class="waves-effect"><i data-icon="'" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Akun<span class="fa arrow"></span></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="{{route('admin.pengaturan-akun')}}" class="waves-effect"><i data-icon="&#xe005;" class="linea-icon linea-basic fa-fw"></i>Pengaturan Akun</a></li>
+                            <li><a href="{{route('admin.jabatan')}}"><i data-icon=")" class="linea-icon linea-basic fa-fw"></i>Konfigurasi Jabatan</a></li>
+                            <li><a href="{{route('admin.kabid')}}"><i data-icon=")" class="linea-icon linea-basic fa-fw"></i>Konfigurasi Kabid</a></li>
+                            <li><a href="{{route('admin.subid')}}"><i data-icon=")" class="linea-icon linea-basic fa-fw"></i>Konfigurasi Subid</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -616,28 +624,6 @@
 
     <script type="text/javascript">
 
-        var wcppPingTimeout_ms = 10000; //10 sec
-        var wcppPingTimeoutStep_ms = 500; //0.5 sec
-
-
-        function wcppDetectOnSuccess(){
-            // WCPP utility is installed at the client side
-            // redirect to WebClientPrint sample page
-
-            // get WCPP version
-            var wcppVer = arguments[0];
-            if(wcppVer.substring(0, 1) == "4")
-                window.location.href = '{{action('HomeController@printPDF')}}';
-            else //force to install WCPP v4.0
-                wcppDetectOnFailure();
-        }
-
-        function wcppDetectOnFailure() {
-            // It seems WCPP is not installed at the client side
-            // ask the user to install it
-            $('#msgInProgress').hide();
-            $('#msgInstallWCPP').show();
-        }
 
     </script>
 

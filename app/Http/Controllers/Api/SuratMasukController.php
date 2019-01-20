@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Component\Model\DisposisiMasukSubid;
+use App\Component\Model\DisposisiMasukKabid;
 use App\Component\Model\SuratMasuk;
+use App\Component\Model\Jabatan;
 use App\Component\Model\User;
 use JWTAuth;
 use JWTAuthException;
@@ -14,24 +17,58 @@ class SuratMasukController extends Controller
 {
     public function viewSuratMasuk()
     {
-        $suratMasuk = SuratMasuk::with('get_user')
-                            ->orderBy('jenis_surat','ASC')
+        $suratMasuk = SuratMasuk::orderBy('jenis_surat','ASC')
                             ->latest()
                             ->get();
 
         foreach ($suratMasuk as $key)
     {
-        $key->viewSuratMasukDetail = [
+        if($key->status == 'Sudah Disposisi'){  
+        $disposisiKabid = DisposisiMasukKabid::with('get_user')->where('surat_masuk_id','=',$key->id)->get();   
+        foreach ($disposisiKabid as $keys) {
+            $keys->viewDMKabidDetail = [
+                'href' => 'api/v1/surat-masuk/disposisi/kabid/' .$keys->id,
+                'method' => 'GET',
+                'url_doc_disposisi' => url($keys->url_disposisi)
+            ];
+            if($keys->kepada != null) {
+                $disposisiSubid = DisposisiMasukSubid::with('get_user')->where('diposisi_masuk_id','=',$keys->id)->get();
+                foreach ($disposisiSubid as $key123) {
+                    $key123->viewDMSubidDetail = [
+                        'href' => 'api/v1/surat-masuk/disposisi/subid/' .$key123->id,
+                        'method' => 'GET',
+                        'url_doc_disposisi' => url($key123->url_disposisi)
+                    ];
+                    
+                }
+            $keys->viewDMSubid = [
+                    'suratMasukDisposisiSubid' => $disposisiSubid
+                    ];
+           
+            }
+        }
+        $key->detailSM = [
+            'href' => 'api/v1/surat-masuk-disposisi-kabid/' .$key->id,
+            'method' => 'GET',
+            'suratMasukDisposisiKabid' => $disposisiKabid
+        ];
+       
+        }else{
+             $key->detailSM = [
             'href' => 'api/v1/surat-masuk/' .$key->id,
-            'url_doc' => url($key->url_dokumen),
             'method' => 'GET'
         ];
+        }
+        if($key->kepada != null){
 
-        $key->updateSuratMasuk = [
+        }else{
+            $key->teruskanSM = [
             'href' => 'api/v1/surat-masuk/' .$key->id,
-            'params' => 'kepada,status,user_id,cek,disposisi,url_disposisi',
+            'params' => 'kepada,disposisi',
             'method' => 'POST'
         ];
+        }
+        
     }
         $response = [
           'msg' => 'List Data Surat Masuk',
@@ -40,52 +77,85 @@ class SuratMasukController extends Controller
         return response()->json($response,200);
     }
 
-    public function viewSuratMasukSpesifik()
-    {
-        $idUser = Auth::User()->id;
+    // public function viewSuratMasukSpesifik()
+    // {
+    //     $idUser = Auth::User()->id;
 
-        $suratMasuk = SuratMasuk::with('get_user')
-                                ->whereHas('get_user',function ($query) use ($idUser){
-                                    $query->whereIn('id',[$idUser]);
-                                })
-                                ->orderBy('jenis_surat','ASC')
-                                ->latest()
-                                ->get();
+    //     $suratMasuk = SuratMasuk::with('get_user')
+    //                             ->whereHas('get_user',function ($query) use ($idUser){
+    //                                 $query->whereIn('id',[$idUser]);
+    //                             })
+    //                             ->orderBy('jenis_surat','ASC')
+    //                             ->latest()
+    //                             ->get();
 
-        foreach ($suratMasuk as $key)
-        {
-            $key->viewSuratMasukDetail = [
-                'href' => 'api/v1/surat-masuk/' .$key->id,
-                'url_doc' => url($key->url_dokumen),
-                'method' => 'GET'
-            ];
+    //     foreach ($suratMasuk as $key)
+    //     {
+    //         $key->viewSMDetail = [
+    //             'href' => 'api/v1/surat-masuk/' .$key->id,
+    //             'url_doc' => url($key->url_dokumen),
+    //             'method' => 'GET'
+    //         ];
 
-            $key->updateSuratMasuk = [
-                'href' => 'api/v1/surat-masuk/' .$key->id,
-                'params' => 'kepada,status,user_id,cek,disposisi,url_disposisi',
-                'method' => 'POST'
-            ];
-        }
-        $response = [
-            'msg' => 'List Data Surat Masuk',
-            'suratMasuk' => $suratMasuk
-        ];
-        return response()->json($response,200);
-    }
+    //         $key->teruskanSM = [
+    //             'href' => 'api/v1/surat-masuk/' .$key->id,
+    //             'params' => 'kepada,status,user_id,cek,disposisi,url_disposisi',
+    //             'method' => 'POST'
+    //         ];
+    //     }
+    //     $response = [
+    //         'msg' => 'List Data Surat Masuk',
+    //         'suratMasuk' => $suratMasuk
+    //     ];
+    //     return response()->json($response,200);
+    // }
 
     public function viewSuratMasukDetail($id)
     {
-        $suratMasuk = SuratMasuk::with('get_user')->findOrFail($id);
+        $suratMasuk = SuratMasuk::findOrFail($id);
 
+        if($suratMasuk->status == 'Sudah Disposisi'){  
+        $disposisiKabid = DisposisiMasukKabid::where('surat_masuk_id','=',$suratMasuk->id)->get();   
+        foreach ($disposisiKabid as $keys) {
+            $keys->viewDMKabidDetail = [
+                'href' => 'api/v1/surat-masuk/disposisi/kabid/' .$keys->id,
+                'method' => 'GET',
+                'url_doc_disposisi' => url($keys->url_disposisi)
+            ];
+            if($keys->kepada != null) {
+                $disposisiSubid = DisposisiMasukSubid::where('diposisi_masuk_id','=',$keys->id)->get();
+                foreach ($disposisiSubid as $key123) {
+                    $key123->viewDMSubidDetail = [
+                        'href' => 'api/v1/surat-masuk/disposisi/subid/' .$key123->id,
+                        'method' => 'GET',
+                        'url_doc_disposisi' => url($key123->url_disposisi)
+                    ];
+                   
+                }
+            $keys->ViewDMSubid = [
+                    'href' => 'api/v1/surat-masuk-disposisi-subid/' .$keys->id ,
+                    'method' => 'GET',
+                    'suratMasukDisposisiSubid' => $disposisiSubid
+                    ];
+            
+            }
+        }
+        $suratMasuk->viewDMKabid = [
+             'href' => 'api/v1/surat-masuk-disposisi-kabid/' .$suratMasuk->id,
+            'method' => 'GET',
+            'suratMasukDisposisiKabid' => $disposisiKabid
+        ];
+        
+        }
 
-        $suratMasuk->viewSemuaSuratMasuk = [
+        $suratMasuk->viewSMAll = [
                 'href' => 'api/v1/surat-masuk',
                 'method' => 'GET'
             ];
 
-        $suratMasuk->updateSuratMasuk = [
+        $suratMasuk->teruskanSM = [
                 'href' => 'api/v1/surat-masuk/' .$suratMasuk->id,
-                'params' => 'kepada,status,user_id,cek,disposisi,url_disposisi',
+                'params' => 'kepada,disposisi',
                 'method' => 'POST'
             ];
 
@@ -97,12 +167,18 @@ class SuratMasukController extends Controller
     }
 
     public function updateSuratMasuk(Request $request,$id){
+          $suratMasuk = SuratMasuk::findOrFail($id);
+        if($suratMasuk->kepada != null){
+              $response = [
+            'msg' => 'Surat ini Sudah di teruskan!',
+        ];
+        return response()->json($response,200);
+
+    }
         $this->validate($request, [
             'tgl_penyelesaian' => 'required',
             'kepada' => 'required',
-            'status' => 'required',
-            'user_id' => 'required',
-            'cek' => 'required',
+            'instruksi' => 'required',
             'file' => 'required',
             'file.*' => 'file|mimes:pdf|max:2048'
         ]);
@@ -119,31 +195,69 @@ class SuratMasukController extends Controller
             $path = 'storage/surat_masuk/disposisi/' . $name;
         }
 
-        $suratMasuk = SuratMasuk::with('get_user')->findOrFail($id);
+        $kepada = $request->input('kepada');
+        $splitKepada = explode(",",$kepada);
+        $jabatan_skt = Jabatan::where('name','=','Sekretaris')->first();
+        $sekretaris = User::with('get_jabatan','get_kabid','get_subid')->where('jabatan_id','=',$jabatan_skt->id)->first();
+
+        foreach ($splitKepada as $key) {
+            if($key == ""){
+
+            }else{
+                $user = User::with('get_jabatan','get_kabid','get_subid')->findOrFail($key);
+                 if($user->id == $sekretaris->id){
+                    $dataUser[] = $user->get_jabatan->name;
+                 }else{
+            $dataUser[] = $user->get_kabid->name;
+                 }
+            }           
+        }
+        $dataKepada = implode(",",$dataUser);
+        $suratMasuk = SuratMasuk::findOrFail($id);
         $suratMasuk->tgl_penyelesaian = $request->input('tgl_penyelesaian');
-        $suratMasuk->kepada = $request->input('kepada');
-        $suratMasuk->status = $request->input('status');
-        $suratMasuk->user_id = $request->input('user_id');
-        $suratMasuk->cek = $request->input('cek');
+        $suratMasuk->kepada = $dataKepada;
+        $suratMasuk->instruksi = $request->input('instruksi');
+        $suratMasuk->status = 'Sudah Disposisi';
         $suratMasuk->disposisi = $name;
         $suratMasuk->url_disposisi = $path;
         $suratMasuk->save();
 
-        //notifikasi
+        foreach ($splitKepada as $key) {
+            if($key == ""){
 
-        $suratMasuk->viewSuratMasukDetail = [
-            'href' => 'api/v1/surat-masuk/' .$suratMasuk->id,
-            'url_doc_disposisi' => url($suratMasuk->url_disposisi),
-            'method' => 'GET'
+            }else{
+                $newDisposisiKabid = new DisposisiMasukKabid([
+                    'user_id' => $key,
+                    'surat_masuk_id' => $id,
+                    'disposisi' => $name,
+                    'url_disposisi' => $path
+                ]);
+                $newDisposisiKabid->save();
+            //notif untuk kabid
+            }
+        }
+
+        $suratDisposisiKabid = DisposisiMasukKabid::where('surat_masuk_id','=',$id)->get();
+        foreach ($suratDisposisiKabid as $key) {
+            $key->viewDMKabidDetail = [
+                'href' => 'api/v1/surat-masuk/disposisi/kabid/' .$key->id,
+                'method' => 'GET',
+                'url_doc_disposisi' => url($key->url_disposisi)
+            ];
+        }
+        $suratMasuk->viewDMKabid = [
+            'href' => 'api/v1/surat-masuk-disposisi-kabid/' .$id ,
+            'method' => 'GET',
+            'suratMasukDisposisiKabid' => $suratDisposisiKabid
         ];
 
-        $suratMasuk->viewSemuaSuratMasuk = [
+        $suratMasuk->viewSMAll = [
             'href' => 'api/v1/surat-masuk',
             'method' => 'GET'
         ];
 
         $response = [
-            'msg' => 'Surat ' .$suratMasuk->indeks .' Berhasil di perbarui!',
+            'msg' => 'Surat ' .$suratMasuk->indeks .' Berhasil di teruskan ke Kabid!',
             'suratMasuk' => $suratMasuk
         ];
 
@@ -174,13 +288,13 @@ class SuratMasukController extends Controller
 
         foreach ($suratMasuk as $key)
         {
-            $key->viewSuratMasukDetail = [
+            $key->viewSMDetail = [
                 'href' => 'api/v1/surat-masuk/' .$key->id,
                 'url_doc' => url($key->url_dokumen),
                 'method' => 'GET'
             ];
 
-            $key->updateSuratMasuk = [
+            $key->teruskanSM = [
                 'href' => 'api/v1/surat-masuk/' .$key->id,
                 'params' => 'kepada,status,user_id,cek,disposisi,url_disposisi',
                 'method' => 'POST'
@@ -207,13 +321,13 @@ class SuratMasukController extends Controller
 
         foreach ($suratMasuk as $key)
         {
-            $key->viewSuratMasukDetail = [
+            $key->viewSMDetail = [
                 'href' => 'api/v1/surat-masuk/' .$key->id,
                 'url_doc' => url($key->url_dokumen),
                 'method' => 'GET'
             ];
 
-            $key->updateSuratMasuk = [
+            $key->teruskanSM = [
                 'href' => 'api/v1/surat-masuk/' .$key->id,
                 'params' => 'kepada,status,user_id,cek,disposisi,url_disposisi',
                 'method' => 'POST'

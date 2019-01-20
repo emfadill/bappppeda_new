@@ -28,16 +28,15 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $wcppScript = WebClientPrint::createWcppDetectionScript(action('WebClientPrintController@processRequest'), Session::getId());
-        $suratmasuk = SuratMasuk::with('get_user')
-            ->orderBy('jenis_surat','ASC')
+        // $wcppScript = WebClientPrint::createWcppDetectionScript(action('WebClientPrintController@processRequest'), Session::getId());
+        $suratmasuk = SuratMasuk::orderBy('jenis_surat','ASC')
             ->latest()
             ->get();
-        $suratkeluar = SuratKeluar::with('get_user')
-            ->orderBy('jenis_surat','ASC')
+        $suratkeluar = SuratKeluar::orderBy('jenis_surat','ASC')
             ->latest()
             ->get();
-        return view('admin.home', compact('suratmasuk','suratkeluar'),['wcppScript' => $wcppScript]);
+        return view('admin.home', compact('suratmasuk','suratkeluar'));
+        // return view('admin.home', compact('suratmasuk','suratkeluar'),['wcppScript' => $wcppScript]);
     }
 
     /**
@@ -102,7 +101,7 @@ class AdminController extends Controller
      */
     public function view_pdf($id)
     {
-        $suratmasuk = SuratMasuk::with('get_user')->findOrFail($id);
+        $suratmasuk = SuratMasuk::findOrFail($id);
 
 
             $pdf = PDF::loadView('admin.surat-masuk', ['view_pdf_masuk' => $suratmasuk->dokumen]);
@@ -112,7 +111,7 @@ class AdminController extends Controller
 
     public function  view($id)
     {
-        $suratmasuk = SuratMasuk::with('get_user')->findOrFail($id);
+        $suratmasuk = SuratMasuk::findOrFail($id);
         $filename = $suratmasuk->dokumen;
         $path = url($suratmasuk->url_dokumen);
 
@@ -124,7 +123,7 @@ class AdminController extends Controller
 
     public function showTenderDocs($id)
     {
-        $suratmasuk = SuratMasuk::with('get_user')->findOrFail($id);
+        $suratmasuk = SuratMasuk::findOrFail($id);
         dd(url($suratmasuk->url_dokumen));
         $filename = url($suratmasuk->url_dokumen);
         $path = url($suratmasuk->url_dokumen);

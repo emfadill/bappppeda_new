@@ -177,6 +177,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                                 <div class="row setup-content" id="step-3">
                                     <div class="col-xs-12">
                                         <div class="col-md-12">
@@ -200,86 +201,6 @@
                                     </div>
                                 </div>
                             </form>
-                             {{--<div id="exampleValidator" class="wizard">
-                                <ul class="wizard-steps" role="tablist">
-                                    <li class="active" role="tab">
-                                        <h4><span><i class="ti-upload"></i></span>Scan atau Upload Surat Keluar</h4> </li>
-                                    <li role="tab">
-                                        <h4><span><i class="ti-pencil-alt"></i></span>Masukkan Title dan Subject</h4> </li>
-                                    <li role="tab">
-                                        <h4><span><i class="ti-email"></i></span>Pilih Jenis Surat</h4> </li>
-                                </ul>
-                                <form id="validation" class="form-horizontal">
-                                    <div class="wizard-content">
-                                        <div class="wizard-pane active" role="tabpanel">
-                                            <div class="form-group">
-                                                <input type="file" id="input-file-now-custom-2" class="dropify" data-height="500" />
-                                            </div>
-                                        </div>
-                                        <div class="wizard-pane" role="tabpanel">
-                                            <div class="form-group">
-                                                <div class="row">
-                                                <label class="col-xs-3 control-label">Indeks</label>
-                                                <div class="col-xs-5">
-                                                    <input type="text" class="form-control" name="indeks" /><br>
-                                                </div>
-                                            </div>
-                                                
-                                            <div class="row">
-                                                <label class="col-xs-3 control-label">Dari</label>
-                                                <div class="col-xs-5">
-                                                    
-                                           <input type="text" class="form-control" name="dari" /><br>
-                                                </div>
-                                                
-                                            </div>
-                                             
-                                              <div class="row">
-                                                <label class="col-xs-3 control-label">Tujuan</label>
-                                                <div class="col-xs-5">
-                                                    <input type="text" class="form-control" name="Tujuan" /><br>
-                                                </div>
-                                            </div>
-
-                                             <div class="row">
-                                                <label class="col-xs-3 control-label">Perihal</label>
-                                                <div class="col-xs-5">
-                                                     <textarea class="form-control" rows="5" name="perihal"></textarea><br>
-                                                </div>
-                                            </div>
-
-                                             <div class="row">
-                                                <label class="col-xs-3 control-label">Tgl/No Surat Keluar</label>
-                                                <div class="col-xs-5">
-                                                    <input type="text" class="form-control" name="tgl_no_surat" /><br>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <label class="col-xs-3 control-label">Tgl Surat Keluar</label>
-                                                <div class="col-xs-5">
-                                                    
-                                            <input type="date" class="form-control" id="datepicker-autoclose" placeholder="mm/dd/yyyy" name="tgl_surat_masuk"><span class="input-group-addon"><i class="icon-calender"></i></span> 
-                                                </div>
-                                                
-                                            </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="wizard-pane" role="tabpanel">
-                                            <div class="form-group">
-                                                <center>
-                                                <div class="col-xs-6">
-                                                    <button class="btn btn-danger btn-rounded waves-effect waves-light" type="button"><span class="btn-label"><i class="fa fa-envelope-o"></i></span>Express</button> 
-                                            </div>
-                                            <div class="col-xs-6">
-                                                    <button class="btn btn-success btn-rounded waves-effect waves-light" type="button"><span class="btn-label"><i class="fa fa-envelope-o"></i></span>Standar</button> 
-                                            </div>
-                                            </center>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>--}}
                     </div>
                 </div>
                 </div>
