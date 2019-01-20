@@ -50,9 +50,16 @@
                                             <td>{{$data->tgl_suratmasuk}}</td>
                                             <td>{{$data->tgl_penyelesaian}}</td>
                                             <td>{{$data->jenis_surat}}</td>
+<<<<<<< HEAD
                                             <!-- <td>
                                             </td> -->
                                             <td></td>
+=======
+                                            <td><a href="#" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#largeModal">Tampil PDF</a>
+                                                <a href="{{action('Admin\AdminController@printPDF')}}" class="btn btn-lg btn-primary">Tampil PDF</a>
+                                            </td>
+                                            <td><a class="btn btn-block btn-primary fa fa-download" href="{{asset('storage/surat_masuk/disposisi/'.$data->disposisi)}}"></a></td>
+>>>>>>> d1497ad0b8e4a495b76734486a99b915c2b73a9c
                                             <td>{{$data->kepada}}</td>
                                             <td>{{$data->status}}</td>
                                                 <form action="{{ route('admin.pengaturan.delete',$data->id) }}" id="delete" method="POST">  {{ csrf_field() }}

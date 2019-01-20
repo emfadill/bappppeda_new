@@ -4,6 +4,9 @@
 
 @section('content')
 
+    <div id="page-wrapper">
+        <div class="container-fluid">
+
     <h1>How to directly Print PDF Commands without Preview or Printer Dialog</h1>
     <label class="checkbox">
         <input type="checkbox" id="useDefaultPrinter" /> <strong>Use default printer</strong> or...

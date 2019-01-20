@@ -75,4 +75,6 @@ Route::get('/notif', 'Admin\FirebaseController@index');
 //post-notif
 Route::resource('post', 'PostController');
 
-
+Route::get('/suratmasuk/printPDF', 'Admin\AdminController@printPDF');
+Route::get('PrintPDFController', 'PrintPDFController@printFile');
+Route::any('WebClientPrintController', 'WebClientPrintController@processRequest');

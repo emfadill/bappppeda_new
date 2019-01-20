@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/plugins/images/favicon.png')}}">
+<link rel="icon" href="{{asset('admin/plugins/images/logo_bpd.ico')}}">
 <title>LOGIN</title>
 <!-- Bootstrap Core CSS -->
 <link href="{{asset('admin/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -33,7 +33,8 @@
     <div class="white-box">
       <form class="form-horizontal form-material"  action="{{ route('login')}}" method="POST">
         @csrf
-        <a href="javascript:void(0)" class="text-center db"><img src="{{asset('admin/plugins/images/pixeladmin-logo-dark.png')}}" alt="Home" /><br/><img src="{{asset('admin/plugins/images/pixeladmin-text-dark.png')}}" alt="Home" /></a>
+        <a href="javascript:void(0)" class="text-center db"><img src="{{asset('admin/plugins/images/logo-bappppeda.png')}}" alt="Home" /><br/>{{--<img src="{{asset('admin/plugins/images/pixeladmin-text-dark.png')}}" alt="Home" /></a>--}}<b>BAPPPPEDA</b>
+            <br><span>Kabupaten Sumedang</span>
         <div class="form-group ">
           <div class="col-xs-12">
             <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" type="text" placeholder="email" name="email" value="{{ old('email') }}" required autofocus>
