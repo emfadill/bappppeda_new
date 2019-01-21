@@ -50,10 +50,16 @@
                                             <td>{{$data->tgl_suratmasuk}}</td>
                                             <td>{{$data->tgl_penyelesaian}}</td>
                                             <td>{{$data->jenis_surat}}</td>
+<<<<<<< HEAD
+                                            <!-- <td>
+                                            </td> -->
+                                            <td></td>
+=======
                                             <td><a href="#" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#largeModal">Tampil PDF</a>
                                                 <a href="{{action('Admin\AdminController@printPDF')}}" class="btn btn-lg btn-primary">Tampil PDF</a>
                                             </td>
                                             <td><a class="btn btn-block btn-primary fa fa-download" href="{{asset('storage/surat_masuk/disposisi/'.$data->disposisi)}}"></a></td>
+>>>>>>> d1497ad0b8e4a495b76734486a99b915c2b73a9c
                                             <td>{{$data->kepada}}</td>
                                             <td>{{$data->status}}</td>
                                                 <form action="{{ route('admin.pengaturan.delete',$data->id) }}" id="delete" method="POST">  {{ csrf_field() }}
@@ -75,7 +81,7 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <iframe src="{{asset('storage/surat_masuk/'.$data->dokumen)}}" height="600" width="850" frameborder="0"></iframe>
+                                                       
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -136,12 +142,9 @@
                                             <td>{{$data->tgl_no_suratkeluar}}</td>
                                             <td>{{$data->tgl_suratkeluar}}</td>
                                             <td>{{$data->jenis_surat}}</td>
-                                            <object data='storage/surat_keluar/.$data->dokumen#toolbar=0&statusbar=0&navpanes=0'
-                                                    type='application/pdf'
-                                                    width='100%'
-                                                    height='100%'>
-                                            <td><a class="btn btn-block btn-primary fa fa-download" href="{{asset('storage/surat_keluar/'.$data->dokumen)}}"></a></td>
-                                            <td><a class="btn btn-block btn-primary fa fa-download" href="{{asset('storage/surat_keluar/disposisi/'.$data->disposisi)}}"></a></td>
+                                          
+                                            <td></td>
+                                            <td></td>
                                             <td>{{$data->kepada}}</td>
                                             <td>{{$data->status}}</td>
                                             <form action="{{ route('admin.pengaturan.delete',$data->id) }}" id="delete" method="POST">  {{ csrf_field() }}
@@ -165,6 +168,5 @@
 
 
                 <!-- /.row -->
-                <script src="{{asset('js/pdfobject.js')}}"></script>
-                <script>PDFObject.embed("{{asset('storage/surat_keluar/'.$data->dokumen)}}", "#example1");</script>
+                <!-- <script src="{{asset('js/pdfobject.js')}}"></script> -->
 @endsection

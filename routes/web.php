@@ -41,6 +41,33 @@ Route::post('/pengaturan-akun/add-akun/create', 'Admin\PengaturanController@crea
 Route::get('/pengaturan-akun/edit-akun/{id}', 'Admin\PengaturanController@edit')->name('admin.edit-akun');
 Route::patch('/pengaturan-akun/update/{id}', 'Admin\PengaturanController@update')->name('admin.pengaturan.update');
 Route::delete('/pengaturan-akun/delete/{id}', 'Admin\PengaturanController@destroy')->name('admin.pengaturan.delete');
+Route::get('/json-subid', 'Admin\PengaturanController@subid');
+Route::get('/json-kabid', 'Admin\PengaturanController@kabid');
+
+//Jabatan
+Route::get('/konfigurasi-jabatan', 'Admin\JabatanController@index')->name('admin.jabatan');
+Route::get('/konfigurasi-jabatan/add', 'Admin\JabatanController@create')->name('admin.jabatan.add');
+Route::post('/konfigurasi-jabatan/create', 'Admin\JabatanController@store')->name('admin.jabatan.create');
+Route::get('/konfigurasi-jabatan/edit/{id}', 'Admin\JabatanController@edit')->name('admin.jabatan.edit');
+Route::patch('/konfigurasi-jabatan/update/{id}', 'Admin\JabatanController@update')->name('admin.jabatan.update');
+Route::delete('/konfigurasi-jabatan/delete/{id}', 'Admin\JabatanController@destroy')->name('admin.jabatan.delete');
+
+
+//Kabid
+Route::get('/konfigurasi-kabid', 'Admin\KabidController@index')->name('admin.kabid');
+Route::get('/konfigurasi-kabid/add', 'Admin\KabidController@create')->name('admin.kabid.add');
+Route::post('/konfigurasi-kabid/create', 'Admin\KabidController@store')->name('admin.kabid.create');
+Route::get('/konfigurasi-kabid/edit/{id}', 'Admin\KabidController@edit')->name('admin.kabid.edit');
+Route::patch('/konfigurasi-kabid/update/{id}', 'Admin\KabidController@update')->name('admin.kabid.update');
+Route::delete('/konfigurasi-kabid/delete/{id}', 'Admin\KabidController@destroy')->name('admin.kabid.delete');
+
+//Subid
+Route::get('/konfigurasi-subid', 'Admin\SubidController@index')->name('admin.subid');
+Route::get('/konfigurasi-subid/add', 'Admin\SubidController@create')->name('admin.subid.add');
+Route::post('/konfigurasi-subid/create', 'Admin\SubidController@store')->name('admin.subid.create');
+Route::get('/konfigurasi-subid/edit/{id}', 'Admin\SubidController@edit')->name('admin.subid.edit');
+Route::patch('/konfigurasi-subid/update/{id}', 'Admin\SubidController@update')->name('admin.subid.update');
+Route::delete('/konfigurasi-subid/delete/{id}', 'Admin\SubidController@destroy')->name('admin.subid.delete');
 
 //notifikasi
 Route::get('/notif', 'Admin\FirebaseController@index');

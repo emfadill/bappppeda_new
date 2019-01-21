@@ -25,17 +25,11 @@ class CreateSuratMasuksTable extends Migration
             $table->string('instruksi')->nullable();
             $table->string('kepada')->nullable();
             $table->string('status')->nullable();
-            $table->unsignedInteger('user_id')->nullable();
-            $table->string('cek')->nullable();
             $table->string('dokumen');
             $table->string('url_dokumen',1000);
             $table->string('disposisi')->nullable();
             $table->string('url_disposisi',1000)->nullable();
-            $table->timestamps();
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
+            $table->timestamps();            
         });
     }
 

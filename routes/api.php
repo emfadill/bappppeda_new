@@ -26,13 +26,19 @@ Route::group(['prefix' => 'v1' , 'middleware' => 'cors'], function() {
 		'uses' => 'Api\AuthController@login'
 	]);
 
+        
     Route::group(['middleware' => 'jwt.auth'], function() {
+        //data user jabatan kabid
+        Route::get('/data-kabid','Api\KonfigurasiController@kabid');
+
+        //data user jabatan subid
+        Route::get('/data-subid','Api\KonfigurasiController@subid');
 
         //surat-masuk
         Route::get('/surat-masuk','Api\SuratMasukController@viewSuratMasuk');
         Route::get('/surat-masuk/{id}','Api\SuratMasukController@viewSuratMasukDetail');
         Route::post('/surat-masuk/{id}','Api\SuratMasukController@updateSuratMasuk');
-        Route::get('/spesifik/surat-masuk','Api\SuratMasukController@viewSuratMasukSpesifik');
+        // Route::get('/spesifik/surat-masuk','Api\SuratMasukController@viewSuratMasukSpesifik');
 
         //surat-keluar
         Route::get('/surat-keluar','Api\SuratKeluarController@viewSuratKeluar');
@@ -40,8 +46,6 @@ Route::group(['prefix' => 'v1' , 'middleware' => 'cors'], function() {
         Route::post('/surat-keluar/{id}','Api\SuratKeluarController@updateSuratKeluar');
         Route::get('/spesifik/surat-keluar','Api\SuratKeluarController@viewSuratKeluarSpesifik');
 
-        //ambil data user
-        Route::get('/data-user','Api\SuratMasukController@data_user');
 
         //search kepala-bappppeda
         Route::get('/surat-masuk-cari','Api\SuratMasukController@search_dokumen');
@@ -50,6 +54,35 @@ Route::group(['prefix' => 'v1' , 'middleware' => 'cors'], function() {
         //search per user
         Route::get('/spesifik/surat-masuk/cari','Api\SuratMasukController@search_dokumen_spesifik');
         Route::get('/spesifik/surat-keluar/cari','Api\SuratKeluarController@search_dokumen_spesifik');
+
+        //disposisi-masuk-detail-dari-surat-masuk        
+        Route::get('/surat-masuk-disposisi-kabid/{id}','Api\DisposisiMasukKabidController@viewDisposisiKabid');
+        //disposisi-masuk-detail-kabid       
+        Route::get('/surat-masuk/disposisi/kabid/{id}','Api\DisposisiMasukKabidController@viewDisposisiKabidDetail');
+        //disposisi-masuk-detail-subid  
+        Route::get('/surat-masuk/disposisi/subid/{id}','Api\DisposisiMasukSubidController@viewDisposisiSubidDetail');
+
+        //disposisimasuk per kabid
+        Route::get('/surat-masuk/disposisi/kabid/','Api\DisposisiMasukKabidController@viewDisposisiKabidSpesifik');
+        Route::post('/surat-masuk/disposisi/kabid/{id}','Api\DisposisiMasukKabidController@teruskanDisposisiKabid');
+
+        //disposisimasuk per subid
+        Route::get('/surat-masuk/disposisi/subid/','Api\DisposisiMasukSubidController@viewDisposisiSubidSpesifik');
+
+         //disposisi-keluar-detail-dari-surat-keluar        
+        Route::get('/surat-keluar-disposisi-kabid/{id}','Api\DisposisiKeluarKabidController@viewDisposisiKabid');
+        //disposisi-keluar-detail-kabid       
+        Route::get('/surat-keluar/disposisi/kabid/{id}','Api\DisposisiKeluarKabidController@viewDisposisiKabidDetail');
+        //disposisi-keluar-detail-subid  
+        Route::get('/surat-keluar/disposisi/subid/{id}','Api\DisposisiKeluarSubidController@viewDisposisiSubidDetail');
+
+        //disposisikeluar per kabid
+        Route::get('/surat-keluar/disposisi/kabid/','Api\DisposisiKeluarKabidController@viewDisposisiKabidSpesifik');
+        Route::post('/surat-keluar/disposisi/kabid/{id}','Api\DisposisiKeluarKabidController@teruskanDisposisiKabid');
+
+        //disposisikeluar per subid
+        Route::get('/surat-keluar/disposisi/subid/','Api\DisposisiKeluarSubidController@viewDisposisiSubidSpesifik');
+       
     });
 
 });

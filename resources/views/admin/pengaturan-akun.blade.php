@@ -35,6 +35,8 @@
                                             <th>Username</th>
                                             <th>Nama</th>
                                             <th>Jabatan</th>
+                                            <th>Kepala Bidang</th>
+                                            <th>Sub Bidang</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -44,7 +46,16 @@
                                             <td>{{$data->id}}</td>
                                             <td>{{$data->username}}</td>
                                             <td>{{$data->name}}</td>
-                                            <td>{{$data->jabatan}}</td>
+                                            <td>{{$data->get_jabatan->name}}</td>@if($data->kabid_id == null)
+                                            <td></td>
+                                            @else
+                                            <td>{{$data->get_kabid->name}}</td>
+                                            @endif
+                                            @if($data->subid_id == null)
+                                            <td></td>
+                                            @else
+                                            <td>{{$data->get_subid->name}}</td>
+                                            @endif
                                             <td>
                                               <form action="{{ route('admin.pengaturan.delete',$data->id) }}" id="delete" method="POST">  {{ csrf_field() }}
                                                     {{method_field('delete')}}

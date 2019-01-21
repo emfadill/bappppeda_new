@@ -25,7 +25,7 @@ class AuthController extends Controller
         $username = $request->input('username');
         $password = $request->input('password');
 
-        if ($user = User::where('username',$username)->first()) {
+        if ($user = User::with('get_jabatan','get_kabid','get_subid')->where('username',$username)->first()) {
             $credentials = [
                     'username' => $username,
                     'password' => $password
@@ -48,6 +48,7 @@ class AuthController extends Controller
             $response = [
                 'msg' => 'User berhasil login',
                 'user' => $user,
+                'jabatan' => $user->get_jabatan->name,
                 'token' => $token
             ];
 
