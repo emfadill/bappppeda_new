@@ -166,21 +166,17 @@ return [
         /*
          * Package Service Providers...
          */
-
+        LaravelFCM\FCMServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
         'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
         Barryvdh\DomPDF\ServiceProvider::class,
-<<<<<<< HEAD
-        LaravelFCM\FCMServiceProvider::class,
-=======
         Spatie\Permission\PermissionServiceProvider::class,
->>>>>>> 8cfe1439f3632c1d3e2ad3a798001c3dc6fe84f9
         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
