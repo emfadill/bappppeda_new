@@ -299,4 +299,98 @@ class SuratKeluarController extends Controller
         return response()->json($response,200);
     }
 
+    public function updateSuratKeluar_langsung(Request $request,$id){
+        $suratKeluar = SuratKeluar::findOrFail($id);
+        if($suratKeluar->kepada != null){
+            $response = [
+                'msg' => 'Surat ini Sudah di teruskan!',
+            ];
+            return response()->json($response,200);
+
+        }
+        $this->validate($request, [
+            'kepada' => 'required',
+            'disposisi' => 'required',
+            'disposisi.*' => 'file|mimes:pdf|max:2048',
+        ]);
+
+        if ($request->hasFile('file')) {
+            $filename_disposisi = $request->disposisi->getClientOriginalName();
+            $name_only_disposisi = pathinfo($filename_disposisi, PATHINFO_FILENAME);
+            $ext_only_disposisi = $request->disposisi->getClientOriginalExtension();
+
+            $name_file_disposisi = str_replace(" ", "-", strtolower($name_only_disposisi));
+            $name_disposisi = $name_file_disposisi . '-' . date('His') . '.' . $ext_only_disposisi;
+            $request->disposisi->storeAs('public/surat_keluar/disposisi', $name_disposisi);
+            $path_disposisi = 'storage/surat_keluar/disposisi/' . $name_disposisi;
+        }
+
+        $kepada = $request->input('kepada');
+        $splitKepada = explode(",",$kepada);
+        $jabatan_skt = Jabatan::where('name','=','Sekretaris')->first();
+        $sekretaris = User::with('get_jabatan','get_kabid','get_subid')->where('jabatan_id','=',$jabatan_skt->id)->first();
+
+        foreach ($splitKepada as $key) {
+            if($key == ""){
+
+            }else{
+                $user = User::with('get_jabatan','get_kabid','get_subid')->findOrFail($key);
+                if($user->id == $sekretaris->id){
+                    $dataUser[] = $user->get_jabatan->name;
+                }else{
+                    $dataUser[] = $user->get_kabid->name;
+                }
+            }
+        }
+        $dataKepada = implode(",",$dataUser);
+
+        $suratKeluar = SuratKeluar::findOrFail($id);
+        $suratKeluar->kepada = $dataKepada;
+        $suratKeluar->status = 'Sudah Disposisi';
+        $suratKeluar->disposisi = $name_disposisi;
+        $suratKeluar->url_disposisi = $path_disposisi;
+        $suratKeluar->save();
+        foreach ($splitKepada as $key) {
+            if($key == ""){
+
+            }else{
+                $newDisposisiKabid = new DisposisiKeluarKabid([
+                    'user_id' => $key,
+                    'surat_keluar_id' => $id,
+                    'disposisi' => $name_disposisi,
+                    'url_disposisi' => $path_disposisi
+                ]);
+                $newDisposisiKabid->save();
+                //notif untuk kabid
+            }
+        }
+
+        $suratDisposisiKabid = DisposisiKeluarKabid::where('surat_keluar_id','=',$id)->get();
+        foreach ($suratDisposisiKabid as $key) {
+            $key->viewDKKabidDetail = [
+                'href' => 'api/v1/surat-keluar/disposisi/kabid/' .$key->id,
+                'method' => 'GET',
+                'url_doc_disposisi' => url($key->url_disposisi)
+            ];
+        }
+        $suratKeluar->viewDKKabid = [
+            'href' => 'api/v1/surat-keluar-disposisi-kabid/' .$id ,
+            'method' => 'GET',
+            'suratKeluarDisposisiKabid' => $suratDisposisiKabid
+        ];
+
+        $suratKeluar->viewSemuaSuratKeluar = [
+            'href' => 'api/v1/surat-keluar',
+            'method' => 'GET'
+        ];
+
+        $response = [
+            'msg' => 'Surat ' .$suratKeluar->indeks .' Berhasil di teruskan ke kabid!',
+            'suratKeluar' => $suratKeluar
+        ];
+
+        return response()->json($response,200);
+
+    }
+
 }

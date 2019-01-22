@@ -57,7 +57,7 @@
 <link href="{{asset('admin/plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css')}}" rel="stylesheet" />
 <link href="{{asset('admin/plugins/bower_components/multiselect/css/multi-select.css')}}" rel="stylesheet" type="text/css" />
 
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    {{--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>--}}
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -224,7 +224,7 @@
 
 <!-- jQuery -->
 <script src="{{asset('admin/plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    {{--<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>--}}
 <!-- Bootstrap Core JavaScript -->
 <script src="{{asset('admin/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <!-- Menu Plugin JavaScript -->
@@ -623,10 +623,8 @@
     });
     </script>
 
-    <script type="text/javascript">
+    {{--<script type="text/javascript">
 
-<<<<<<< HEAD
-=======
         var wcppPingTimeout_ms = 10000; //10 sec
         var wcppPingTimeoutStep_ms = 500; //0.5 sec
 
@@ -649,9 +647,8 @@
             $('#msgInProgress').hide();
             $('#msgInstallWCPP').show();
         }
->>>>>>> d1497ad0b8e4a495b76734486a99b915c2b73a9c
 
-    </script>
+    </script>--}}
 
 </body>
 </html>
