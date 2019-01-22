@@ -26,24 +26,13 @@ class user_table_seeder extends Seeder
             'password' => bcrypt('qwezxc'),
             'jabatan_id' => '2',
         ]);
-
-        $user2 = User::create([
-            'nik' => '00003',
-            'name' => 'Kabid A',
-            'username' => 'kabidabc',
+        $user1 = User::create([
+            'nik' => '00005',
+            'name' => 'Bapak Sekretaris',
+            'username' => 'sekretaris',
             'password' => bcrypt('qwezxc'),
-            'jabatan_id' => '4',
-            'kabid_id' => '3'
+            'jabatan_id' => '3',
         ]);
-
-        $user3 = User::create([
-            'nik' => '00004',
-            'name' => 'Subid A1',
-            'username' => 'Subid123',
-            'password' => bcrypt('qwezxc'),
-            'jabatan_id' => '4',
-            'kabid_id' => '5',
-            'subid_id' => '3'
-        ]);
+       
     }
 }

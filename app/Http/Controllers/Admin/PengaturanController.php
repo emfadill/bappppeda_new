@@ -409,12 +409,19 @@ public function kabid(){
                 })
                 ->select('kepala_bidangs.id','kepala_bidangs.name')
                 ->get();
-            foreach ($data as $key ) {
+              if($data->isEmpty()){
+       $kabid = KepalaBidang::where('jabatan_id','=', $kabid)
+                            ->get(); 
+              }else{
+                 foreach ($data as $key ) {
                 $kabid_id[] = $key->id;
               }
-      $kabid = KepalaBidang::where('jabatan_id','=', 3)
+                $kabid = KepalaBidang::where('jabatan_id','=', $kabid)
                             ->whereNotIn('id',$kabid_id)
                             ->get(); 
+              }
+           
+    
       return response()->json($kabid);
 
       }else if($jabatan_id == $subid->id){
@@ -431,8 +438,8 @@ public function kabid(){
             foreach ($data as $key ) {
                 $kabid_id[] = $key->id;
               }
-        $kabid = KepalaBidang::where('jabatan_id','=', 3)
-                            ->whereIn('id',$kabid_id)
+        $kabid = KepalaBidang::where('jabatan_id','=', $kabid)
+                           ->whereIn('id',$kabid_id)
                             ->get(); 
       return response()->json($kabid);
       }
@@ -448,13 +455,21 @@ public function kabid(){
                 })
                 ->select('sub_bidangs.id','sub_bidangs.name')
                 ->get();
+              
+              if($data->isEmpty()){
+                  $kabid_id = Input::get('kabid_id');
+                  $subid = SubBidang::where('kabid_id','=',$kabid_id)
+                        ->get(); 
+              }else{
               foreach ($data as $key ) {
                 $subid_id[] = $key->id;
-              }
-      $kabid_id = Input::get('kabid_id');
-      $subid = SubBidang::where('kabid_id','=',$kabid_id)
+              }             
+                $kabid_id = Input::get('kabid_id');
+                $subid = SubBidang::where('kabid_id','=',$kabid_id)
                         ->whereNotIn('id',$subid_id)
                         ->get(); 
+               }
+    
       return response()->json($subid);
     }
 }
