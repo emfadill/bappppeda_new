@@ -178,7 +178,6 @@ class SuratMasukController extends Controller
         $this->validate($request, [
             'tgl_penyelesaian' => 'required',
             'kepada' => 'required',
-            'instruksi' => 'required',
             'file' => 'required',
             'file.*' => 'file|mimes:pdf|max:2048'
         ]);
@@ -216,7 +215,6 @@ class SuratMasukController extends Controller
         $suratMasuk = SuratMasuk::findOrFail($id);
         $suratMasuk->tgl_penyelesaian = $request->input('tgl_penyelesaian');
         $suratMasuk->kepada = $dataKepada;
-        $suratMasuk->instruksi = $request->input('instruksi');
         $suratMasuk->status = 'Sudah Disposisi';
         $suratMasuk->disposisi = $name;
         $suratMasuk->url_disposisi = $path;

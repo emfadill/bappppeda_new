@@ -45,6 +45,7 @@ Route::group(['prefix' => 'v1' , 'middleware' => 'cors'], function() {
         Route::get('/surat-keluar/{id}','Api\SuratKeluarController@viewSuratKeluarDetail');
         Route::post('/surat-keluar/{id}','Api\SuratKeluarController@updateSuratKeluar');
         Route::post('/surat-keluar-langsung/{id}','Api\SuratKeluarController@updateSuratKeluar_langsung');
+        Route::post('/surat-keluar-ditolak/{id}','Api\SuratKeluarController@updateSuratKeluar_ditolak');
         Route::get('/spesifik/surat-keluar','Api\SuratKeluarController@viewSuratKeluarSpesifik');
 
 

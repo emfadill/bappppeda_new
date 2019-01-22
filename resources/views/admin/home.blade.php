@@ -75,7 +75,7 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                       
+                                                        <iframe src="{{url($data->url_dokumen)}}" height="600" frameborder="0"></iframe>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -136,8 +136,7 @@
                                             <td>{{$data->tgl_no_suratkeluar}}</td>
                                             <td>{{$data->tgl_suratkeluar}}</td>
                                             <td>{{$data->jenis_surat}}</td>
-                                          
-                                            <td></td>
+                                            <td><a href="#" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#largeModalkeluar">Tampil PDF</a></td>
                                             <td></td>
                                             <td>{{$data->kepada}}</td>
                                             <td>{{$data->status}}</td>
@@ -150,6 +149,24 @@
                                                 </td>
                                             </form>
                                         </tr>
+                                        <div class="modal fade" id="largeModalkeluar" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title" id="myModalLabel">PDF</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <iframe src="{{url($data->url_dokumen)}}" height="600" frameborder="0"></iframe>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     @endforeach
                                     </tbody>
                                 </table>

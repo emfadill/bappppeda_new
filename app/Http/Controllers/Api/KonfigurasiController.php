@@ -35,7 +35,7 @@ class KonfigurasiController extends Controller
         ];
     	$response = [
             'msg' => 'List Data Kabid',
-            'Data Kabid' => $data,
+            'Data_Kabid' => $data,
             'Sekretaris' => $Sekretaris
         ];
         return response()->json($response,200);
@@ -56,7 +56,7 @@ class KonfigurasiController extends Controller
     						->get();
     	$response = [
             'msg' => 'List Data Subid',
-            'Data Subid' => $data
+            'Data_Subid' => $data
         ];
         return response()->json($response,200);
     }
