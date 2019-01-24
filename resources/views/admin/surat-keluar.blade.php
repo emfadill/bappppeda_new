@@ -116,7 +116,7 @@
                                                 <input type="file" id="input-file-now-custom-2" name="file" class="dropify" data-height="500" required="required" />
 
                                             </div>
-                                            <button class="btn btn-info nextBtn btn-lg pull-right cursor-not-allow" type="button" >Next</button>
+                                            <button class="btn btn-info nextBtn btn-lg pull-right cursor-not-allow" type="button" >Selanjutnya</button>
                                         </div>
                                     </div>
                                 </div>
@@ -173,7 +173,7 @@
                                                 </div>
 
                                             </div>
-                                            <button class="btn btn-info nextBtn btn-lg pull-right" type="button" >Next</button>
+                                            <button class="btn btn-info nextBtn btn-lg pull-right" type="button" >Selanjutnya</button>
                                         </div>
                                     </div>
                                 </div>

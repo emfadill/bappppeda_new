@@ -48,7 +48,11 @@
                                             <td>{{$data->tgl_no_suratmasuk}}</td>
                                             <td>{{$data->tgl_suratmasuk}}</td>
                                             <td>{{$data->tgl_penyelesaian}}</td>
-                                            <td>{{$data->jenis_surat}}</td>
+                                            @if ($data->jenis_surat == 'Express')
+                                                <td><h4><span class="label label-danger label-rouded">{{$data->jenis_surat}}</span></h4></td>
+                                            @elseif ($data->jenis_surat == 'Standar')
+                                                <td><h4><span class="label label-success label-rouded">{{$data->jenis_surat}}</span></h4></td>
+                                            @endif
                                             <td><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#largeModal{{$data->id}}">Tampil PDF</a>
                                                 <a href="{{action('Admin\AdminController@printPDF')}}" class="btn btn-primary">Tampil PDF</a>
                                             </td>
@@ -153,7 +157,11 @@
                                             <td>{{$data->perihal}}</td>
                                             <td>{{$data->tgl_no_suratkeluar}}</td>
                                             <td>{{$data->tgl_suratkeluar}}</td>
-                                            <td>{{$data->jenis_surat}}</td>
+                                            @if ($data->jenis_surat == 'Express')
+                                                <td><h4><span class="label label-danger label-rouded">{{$data->jenis_surat}}</span></h4></td>
+                                            @elseif ($data->jenis_surat == 'Standar')
+                                                <td><h4><span class="label label-success label-rouded">{{$data->jenis_surat}}</span></h4></td>
+                                            @endif
                                             <td><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#largeModalkeluar{{$data->id}}">Tampil PDF</a></td>
                                             @if ($data->url_disposisi != null)
                                             <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalmasukDisposisi{{$data->id}}">Disposisi</a></td>
