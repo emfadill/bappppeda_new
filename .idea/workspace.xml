@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="860b4f8a-4f5b-4b00-a45b-b944f9ff4a9b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/surat-keluar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/surat-keluar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/surat-masuk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/surat-masuk.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,13 +78,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="55" />
-          <entry key="php" value="9333" />
+          <entry key="php" value="9417" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="55" />
-          <entry key="Blade" value="2751" />
+          <entry key="Blade" value="2835" />
           <entry key="PHP" value="6582" />
         </counts>
       </usages-collector>
@@ -94,11 +92,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
+            <state relative-caret-position="339">
+              <caret line="166" column="141" selection-start-line="166" selection-start-column="141" selection-end-line="166" selection-end-column="141" />
             </state>
           </provider>
         </entry>
@@ -130,10 +128,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/surat-keluar.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
+            <state relative-caret-position="-71">
               <caret line="175" column="125" selection-start-line="175" selection-start-column="125" selection-end-line="175" selection-end-column="125" />
             </state>
           </provider>
@@ -142,7 +140,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DisposisiMasukKabidController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="-2193">
               <caret line="44" column="57" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
             </state>
           </provider>
@@ -212,10 +210,10 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/SuratMasukController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/printPDF.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/SuratKeluarController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/surat-masuk.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/surat-keluar.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/home.blade.php" />
       </list>
     </option>
   </component>
@@ -536,18 +534,18 @@
       <workItem from="1548242365231" duration="245000" />
       <workItem from="1548253326675" duration="4026000" />
       <workItem from="1548259832567" duration="272000" />
-      <workItem from="1548299980603" duration="2771000" />
+      <workItem from="1548299980603" duration="4970000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206357000" />
+    <option name="totallyTimeSpent" value="208556000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31491002" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31491002" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -562,7 +560,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50073206" side_tool="true" weight="0.25632912" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49926794" visible="true" weight="0.35309973" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49926794" visible="true" weight="0.35309973" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -853,13 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DisposisiMasukKabidController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="44" column="57" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
@@ -894,13 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/surat-masuk.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -910,8 +894,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/surat-keluar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
+        <state relative-caret-position="-71">
           <caret line="175" column="125" selection-start-line="175" selection-start-column="125" selection-end-line="175" selection-end-column="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DisposisiMasukKabidController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2193">
+          <caret line="44" column="57" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="166" column="141" selection-start-line="166" selection-start-column="141" selection-end-line="166" selection-end-column="141" />
         </state>
       </provider>
     </entry>

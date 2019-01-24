@@ -142,6 +142,7 @@
                                             <th>Tgl Surat Keluar</th>
                                             <th>Jenis Surat</th>
                                             <th>Dokumen</th>
+                                            <th>Dokumen Tanda Tangan</th>
                                             <th>Disposisi</th>
                                             <th>Diteruskan Kepada</th>
                                             <th>Status</th>
@@ -162,8 +163,14 @@
                                             @elseif ($data->jenis_surat == 'Standar')
                                                 <td><h4><span class="label label-success label-rouded">{{$data->jenis_surat}}</span></h4></td>
                                             @endif
-                                            <td><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#largeModalkeluar{{$data->id}}">Tampil PDF</a></td>
-                                            @if ($data->url_disposisi != null)
+                                            <td><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#largeModal{{$data->id}}">Tampil PDF</a>
+                                                <a href="{{action('Admin\AdminController@printPDF')}}" class="btn btn-primary">Tampil PDF</a>
+                                            @if ($data->url_dokumen_ttd != null)
+                                            <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalkeluarTTD{{$data->id}}">Tampil PDF</a></td>
+                                            @else
+                                                <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#largeModalkeluarTTD{{$data->id}}">Tampil PDF</a></td>
+                                            @endif
+                                                @if ($data->url_disposisi != null)
                                             <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalmasukDisposisi{{$data->id}}">Disposisi</a></td>
                                             @else
                                             <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#largeModalmasukDisposisi{{$data->id}}">Disposisi</a></td>
@@ -212,6 +219,27 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @endif
+
+                                        @if ($data->url_dokumen_ttd != null)
+                                            <div class="modal fade" id="largeModalkeluarTTD{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                                                <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title" id="myModalLabel">PDF</h4>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <iframe src="{{url($data->url_disposisi)}}" height="600" width="850" frameborder="0"></iframe>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         @endif
                                     @endforeach
                                     </tbody>
