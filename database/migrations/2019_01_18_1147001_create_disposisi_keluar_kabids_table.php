@@ -18,6 +18,7 @@ class CreateDisposisiKeluarKabidsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('surat_keluar_id');
             $table->string('kepada')->nullable();
+            $table->string('instruksi')->nullable();
             $table->string('disposisi')->nullable();
             $table->string('url_disposisi',1000)->nullable();
             $table->foreign('surat_keluar_id')

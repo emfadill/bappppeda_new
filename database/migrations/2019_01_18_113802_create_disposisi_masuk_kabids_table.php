@@ -17,6 +17,7 @@ class CreateDisposisiMasukKabidsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('surat_masuk_id');
+            $table->string('instruksi')->nullable();
             $table->string('kepada')->nullable();
             $table->string('disposisi')->nullable();
             $table->string('url_disposisi',1000)->nullable();

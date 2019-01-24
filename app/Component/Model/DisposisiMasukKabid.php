@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class DisposisiMasukKabid extends Model
 {
     protected $fillable = [
-        'user_id','surat_masuk_id','kepada','disposisi','url_disposisi',
+        'user_id','surat_masuk_id','instruksi','kepada','disposisi','url_disposisi',
     ];
 
     public function get_user()
