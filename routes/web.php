@@ -22,6 +22,15 @@ Route::get('/', 'Admin\AdminController@index')->name('admin.home');
 //surat-masuk
 Route::get('/suratmasuk', 'Admin\SuratMasukController@index')->name('admin.surat-masuk');
 Route::post('/suratmasuk/upload', 'Admin\SuratMasukController@store')->name('admin.surat-masuk.upload');
+
+//detail-disposisi-masuk
+Route::get('/detail-disposisi-masuk-kabid/{id}','Admin\AdminController@detaildm')->name('admin.detaildm.kabid');
+Route::get('/detail-disposisi-masuk-subid/{id}','Admin\AdminController@detaildmsubid')->name('admin.detaildm.subid');
+
+//detail-disposisi-keluar
+Route::get('/detail-disposisi-keluar-kabid/{id}','Admin\AdminController@detaildk')->name('admin.detaildk.kabid');
+Route::get('/detail-disposisi-keluar-subid/{id}','Admin\AdminController@detaildksubid')->name('admin.detaildk.subid');
+
 //preview-pdf
 Route::get('/suratmasuk/view/{id}', ['as'=>'view_pdf_masuk','uses'=>'Admin\AdminController@view_pdf']);
 Route::get('/suratmasuk/view_pdf/{id}', ['as'=>'view_pdf','uses'=>'Admin\AdminController@view']);

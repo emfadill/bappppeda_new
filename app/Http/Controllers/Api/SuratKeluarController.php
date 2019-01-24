@@ -222,7 +222,7 @@ class SuratKeluarController extends Controller
         $suratKeluar = SuratKeluar::findOrFail($id);
         $suratKeluar->kepada = $dataKepada;
         $suratKeluar->status = 'Sudah Disposisi';
-        /*$suratKeluar->instruksi = $request->input('instruksi');*/
+        $suratKeluar->instruksi = $request->input('instruksi');
         $suratKeluar->dokumen_ttd = $name;
         $suratKeluar->url_dokumen_ttd = $path;
         $suratKeluar->disposisi = $name_disposisi;

@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Component\Model\SuratKeluar;
 use App\Component\Model\SuratMasuk;
+use App\Component\Model\DisposisiMasukKabid;
+use App\Component\Model\DisposisiKeluarKabid;
+use App\Component\Model\DisposisiMasukSubid;
+use App\Component\Model\DisposisiKeluarSubid;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use PDF;
@@ -65,9 +69,34 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function detaildm($id)
     {
-        //
+        $suratmasuk = SuratMasuk::findOrFail($id);
+        $DM = DisposisiMasukKabid::where('surat_masuk_id',$id)->get();
+        return view('admin.dm.detailDMK',compact('suratmasuk','DM'));
+    }
+
+    public function detaildmsubid($id)
+    {
+        $DM = DisposisiMasukKabid::findOrFail($id);
+        $suratmasuk = SuratMasuk::findOrFail($DM->surat_masuk_id);
+        $DMS = DisposisiMasukSubid::where('diposisi_masuk_id',$id)->get();
+        return view('admin.dm.detailDMS',compact('suratmasuk','DM','DMS'));
+    }
+
+     public function detaildk($id)
+    {
+        $suratkeluar = SuratKeluar::findOrFail($id);
+        $DK = DisposisiKeluarKabid::where('surat_keluar_id',$id)->get();
+        return view('admin.dm.detailDKK',compact('suratkeluar','DK'));
+    }
+
+    public function detaildksubid($id)
+    {
+        $DK = DisposisiKeluarKabid::findOrFail($id);
+        $suratkeluar = SuratKeluar::findOrFail($DK->surat_keluar_id);
+        $DKS = DisposisiKeluarSubid::where('diposisi_keluar_id',$id)->get();
+        return view('admin.dm.detailDKS',compact('suratkeluar','DK','DKS'));
     }
 
     /**
