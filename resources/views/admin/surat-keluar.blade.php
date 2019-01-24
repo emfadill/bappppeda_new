@@ -92,16 +92,16 @@
                             <div class="stepwizard">
                                 <div class="stepwizard-row setup-panel">
                                     <div class="stepwizard-step">
-                                        <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
-                                        <p>Step 1</p>
+                                        <a href="#step-1" class="btn btn-primary btn-circle">1</a>
+                                        <p>Scan atau Upload Surat Keluar</p>
                                     </div>
                                     <div class="stepwizard-step">
-                                        <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-                                        <p>Step 2</p>
+                                        <a href="#step-2" class="btn btn-default btn-circle cursor-not-allow" disabled>2</a>
+                                        <p>Masukkan Title dan Subject</p>
                                     </div>
                                     <div class="stepwizard-step">
-                                        <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                                        <p>Step 3</p>
+                                        <a href="#step-3" class="btn btn-default btn-circle cursor-not-allow" disabled>3</a>
+                                        <p>Pilih Jenis Surat</p>
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@
                                                 <input type="file" id="input-file-now-custom-2" name="file" class="dropify" data-height="500" required="required" />
 
                                             </div>
-                                            <button class="btn btn-primary nextBtn btn-lg pull-right cursor-not-allow" type="button" >Next</button>
+                                            <button class="btn btn-info nextBtn btn-lg pull-right cursor-not-allow" type="button" >Next</button>
                                         </div>
                                     </div>
                                 </div>
@@ -173,7 +173,7 @@
                                                 </div>
 
                                             </div>
-                                            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                                            <button class="btn btn-info nextBtn btn-lg pull-right" type="button" >Next</button>
                                         </div>
                                     </div>
                                 </div>
