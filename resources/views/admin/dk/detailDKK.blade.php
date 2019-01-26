@@ -168,10 +168,10 @@
                                     @foreach ($DK as $data)
                                         <tr>
                                             <td>{{$data->id}}</td>
-                                            @if($data->get_user->get_jabatan == 'Sekretaris')
-                                            <td>{{$data->get_user->get_jabatan->name}}</td>
-                                            @else
+                                            @if ($data->get_user->kabid_id != null)
                                             <td>{{$data->get_user->get_kabid->name}}</td>
+                                            @else
+                                            <td>{{$data->get_user->get_jabatan->name}}</td>
                                             @endif
                                             <td>{{$data->instruksi}}</td>
                                                 @if ($data->url_disposisi != null)
