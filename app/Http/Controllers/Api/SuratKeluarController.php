@@ -426,7 +426,7 @@ class SuratKeluarController extends Controller
     }
 
 
-    public function updateSuratKeluar_tolak(Request $request,$id){
+    public function updateSuratKeluar_ditolak(Request $request,$id){
         $suratKeluar = SuratKeluar::findOrFail($id);
         $this->validate($request, [
             'disposisi' => 'required',

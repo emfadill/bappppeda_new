@@ -171,9 +171,9 @@
                                             <td><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#largeModalkeluar{{$data->id}}">Tampil PDF</a>
                                                 <a href="{{action('Admin\AdminController@printPDF')}}" class="btn btn-primary">Tampil PDF</a>
                                             @if ($data->url_dokumen_ttd != null)
-                                            <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalkeluarTTD{{$data->id}}">Tampil PDF</a></td>
+                                            <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalkeluarTTD{{$data->id}}">Tampil Surat</a></td>
                                             @else
-                                                <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#largeModalkeluarTTD{{$data->id}}">Tampil PDF</a></td>
+                                                <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#largeModalkeluarTTD{{$data->id}}">Tampil Surat</a></td>
                                             @endif
                                                 @if ($data->url_disposisi != null)
                                             <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalkeluarDisposisi{{$data->id}}">Disposisi</a></td>
@@ -239,7 +239,7 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <iframe src="{{url($data->url_disposisi)}}" height="600" width="850" frameborder="0"></iframe>
+                                                            <iframe src="{{url($data->url_dokumen_ttd)}}" height="600" width="850" frameborder="0"></iframe>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

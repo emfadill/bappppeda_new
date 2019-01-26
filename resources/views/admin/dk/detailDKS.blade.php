@@ -52,7 +52,7 @@
                                             @elseif ($suratkeluar->jenis_surat == 'Standar')
                                                 <td><h4><span class="label label-success label-rouded">{{$suratkeluar->jenis_surat}}</span></h4></td>
                                             @endif
-                                            <td><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#largeModal{{$suratkeluar->id}}">Tampil PDF</a>
+                                            <td><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#largeModalkeluar{{$suratkeluar->id}}">Tampil PDF</a>
                                                 <a href="{{action('Admin\AdminController@printPDF')}}" class="btn btn-primary">Tampil PDF</a>
                                             @if ($suratkeluar->url_dokumen_ttd != null)
                                             <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalkeluarTTD{{$suratkeluar->id}}">Tampil PDF</a></td>
@@ -60,9 +60,9 @@
                                                 <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#largeModalkeluarTTD{{$suratkeluar->id}}">Tampil PDF</a></td>
                                             @endif
                                                 @if ($suratkeluar->url_disposisi != null)
-                                            <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalmasukDisposisi{{$suratkeluar->id}}">Disposisi</a></td>
+                                            <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalkeluarDisposisi{{$suratkeluar->id}}">Disposisi</a></td>
                                             @else
-                                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#largeModalmasukDisposisi{{$suratkeluar->id}}">Disposisi</a></td>
+                                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#largeModalkeluarDisposisi{{$suratkeluar->id}}">Disposisi</a></td>
                                             @endif
                                             <td>{{$suratkeluar->kepada}}</td>
                                             @if ($suratkeluar->status == 'Terkirim')
@@ -121,7 +121,7 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <iframe src="{{url($suratkeluar->url_disposisi)}}" height="600" width="850" frameborder="0"></iframe>
+                                                            <iframe src="{{url($suratkeluar->url_dokumen_ttd)}}" height="600" width="850" frameborder="0"></iframe>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -174,9 +174,9 @@
                                             @endif
                                             {{--<td>{{$DK->instruksi}}</td>--}}
                                                 @if ($DK->url_disposisi != null)
-                                            <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalmasukDisposisi{{$DK->id}}">Disposisi</a></td>
+                                            <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalkeluarDisposisi{{$DK->id}}">Disposisi</a></td>
                                             @else
-                                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#largeModalmasukDisposisi{{$DK->id}}">Disposisi</a></td>
+                                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#largeModalkeluarDisposisi{{$DK->id}}">Disposisi</a></td>
                                             @endif
                                             <td>{{$DK->kepada}}</td>
                                             @if($DK->kepada != null)
@@ -263,9 +263,9 @@
                                             <td>{{$data->id}}</td>
                                             <td>{{$data->get_user->get_subid->name}}</td>
                                                 @if ($data->url_disposisi != null)
-                                            <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalmasukDisposisi{{$data->id}}">Disposisi</a></td>
+                                            <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalkeluarDisposisi{{$data->id}}">Disposisi</a></td>
                                             @else
-                                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#largeModalmasukDisposisi{{$data->id}}">Disposisi</a></td>
+                                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#largeModalkeluarDisposisi{{$data->id}}">Disposisi</a></td>
                                             @endif
                                         </tr>
                                         @if ($data->url_disposisi != null)

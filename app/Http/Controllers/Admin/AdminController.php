@@ -16,7 +16,7 @@ use Response;
 use Session;
 
 //Includes WebClientPrint classes
-include_once(app_path() . '\WebClientPrint\WebClientPrint.php');
+//include_once(app_path() . '\WebClientPrint\WebClientPrint.php');
 use Neodynamic\SDK\Web\WebClientPrint;
 
 class AdminController extends Controller
@@ -98,7 +98,7 @@ class AdminController extends Controller
         $DK = DisposisiKeluarKabid::findOrFail($id);
         $suratkeluar = SuratKeluar::findOrFail($DK->surat_keluar_id);
         $DKS = DisposisiKeluarSubid::where('diposisi_keluar_id',$id)->get();
-        return view('admin.dm.detailDKS',compact('suratkeluar','DK','DKS'));
+        return view('admin.dk.detailDKS',compact('suratkeluar','DK','DKS'));
     }
 
     /**

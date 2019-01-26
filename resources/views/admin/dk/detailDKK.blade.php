@@ -121,7 +121,7 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <iframe src="{{url($suratkeluar->url_disposisi)}}" height="600" width="850" frameborder="0"></iframe>
+                                                            <iframe src="{{url($suratkeluar->url_dokumen_ttd)}}" height="600" width="850" frameborder="0"></iframe>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
