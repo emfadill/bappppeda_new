@@ -298,6 +298,39 @@ class SuratKeluarController extends Controller
         return response()->json($response,200);
     }
 
+    public function search_dokumen_spesifik(request $request)
+    {
+        $idUser = Auth::User()->id;
+
+        $data = $request->input('search');
+        $suratKeluar = SuratKeluar::with('get_user')
+            ->whereHas('get_user',function ($query) use ($idUser){
+                $query->whereIn('id',[$idUser]);
+            })
+            ->where('dokumen','like',"%{$data}%")
+            ->get();
+
+        foreach ($suratKeluar as $key)
+        {
+            $key->viewSKDetail = [
+                'href' => 'api/v1/surat-keluar/' .$key->id,
+                'url_doc' => url($key->url_dokumen),
+                'method' => 'GET'
+            ];
+
+            $key->teruskanSK = [
+                'href' => 'api/v1/surat-keluar/' .$key->id,
+                'params' => 'kepada,status,user_id,cek,disposisi,url_disposisi',
+                'method' => 'POST'
+            ];
+        }
+        $response = [
+            'msg' => 'List Data Pencarian Data Surat Keluar Dari ' .$data,
+            'suratKeluar' => $suratKeluar
+        ];
+        return response()->json($response,200);
+    }
+
     public function updateSuratKeluar_langsung(Request $request,$id){
         $suratKeluar = SuratKeluar::findOrFail($id);
         if($suratKeluar->kepada != null){

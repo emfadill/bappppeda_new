@@ -131,7 +131,7 @@
                                         <tr>
                                              <th>No</th>
                                             <th>Jabatan</th>
-                                            <th>Instruksi</th>
+                                            {{--<th>Instruksi</th>--}}
                                             <th>Disposisi</th>
                                             <th>Diteruskan Kepada</th>
                                         </tr>
@@ -144,7 +144,7 @@
                                             @else
                                             <td>{{$DM->get_user->get_kabid->name}}</td>
                                             @endif
-                                            <td>{{$DM->instruksi}}</td>
+                                            {{--<td>{{$DM->instruksi}}</td>--}}
                                                 @if ($DM->url_disposisi != null)
                                             <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalmasukDisposisi{{$DM->id}}">Disposisi</a></td>
                                             @else

@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="860b4f8a-4f5b-4b00-a45b-b944f9ff4a9b" name="Default Changelist" comment="" />
+    <list default="true" id="860b4f8a-4f5b-4b00-a45b-b944f9ff4a9b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/DisposisiKeluarKabidController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/DisposisiKeluarKabidController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/DisposisiMasukKabidController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/DisposisiMasukKabidController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/SuratKeluarController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/SuratKeluarController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/SuratMasukController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/SuratMasukController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dk/detailDKK.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dk/detailDKK.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dk/detailDKS.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dk/detailDKS.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dm/detailDMK.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dm/detailDMK.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dm/detailDMS.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dm/detailDMS.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/home.blade.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +41,12 @@
     <session id="1043774109">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="44" />
+          <entry key="project.closed" value="47" />
           <entry key="project.open.time.14" value="2" />
-          <entry key="project.open.time.15" value="3" />
+          <entry key="project.open.time.15" value="5" />
           <entry key="project.open.time.16" value="5" />
           <entry key="project.open.time.17" value="7" />
-          <entry key="project.open.time.18" value="3" />
+          <entry key="project.open.time.18" value="4" />
           <entry key="project.open.time.19" value="3" />
           <entry key="project.open.time.20" value="6" />
           <entry key="project.open.time.21" value="4" />
@@ -47,7 +59,7 @@
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.61" value="1" />
           <entry key="project.open.time.83" value="1" />
-          <entry key="project.opened" value="46" />
+          <entry key="project.opened" value="49" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -59,86 +71,121 @@
           <entry key="htaccess" value="2" />
           <entry key="json" value="3" />
           <entry key="lock" value="1" />
-          <entry key="php" value="152" />
+          <entry key="php" value="172" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="4" />
-          <entry key="Blade" value="45" />
+          <entry key="Blade" value="52" />
           <entry key="CSS" value="1" />
           <entry key="JSON" value="4" />
-          <entry key="PHP" value="108" />
+          <entry key="PHP" value="121" />
           <entry key="htaccess" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="55" />
-          <entry key="php" value="9417" />
+          <entry key="php" value="9595" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="55" />
-          <entry key="Blade" value="2835" />
-          <entry key="PHP" value="6582" />
+          <entry key="Blade" value="2957" />
+          <entry key="PHP" value="6638" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/SuratMasukController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2312">
+              <caret line="140" selection-start-line="140" selection-end-line="140" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1326">
+              <caret line="89" selection-start-line="89" selection-end-line="89" />
+              <folding>
+                <element signature="e#46#82#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Component/Model/User.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/dk/detailDKK.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="64" column="133" selection-start-line="64" selection-start-column="133" selection-end-line="64" selection-end-column="133" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/api.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="57" column="99" selection-start-line="57" selection-start-column="76" selection-end-line="57" selection-end-column="99" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/SuratMasukController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="337" column="5" lean-forward="true" selection-start-line="306" selection-start-column="4" selection-end-line="337" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/home.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="166" column="141" selection-start-line="166" selection-start-column="141" selection-end-line="166" selection-end-column="141" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/printPDF.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/SuratKeluarController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7259">
-              <caret line="436" column="10" selection-start-line="436" selection-start-column="10" selection-end-line="436" selection-end-column="10" />
+            <state relative-caret-position="17">
+              <caret line="299" lean-forward="true" selection-start-line="299" selection-end-line="299" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/surat-masuk.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/dk/detailDKS.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="115" column="142" selection-start-line="115" selection-start-column="142" selection-end-line="115" selection-end-column="142" />
+            <state relative-caret-position="2669">
+              <caret line="157" column="44" selection-start-line="157" selection-start-column="44" selection-end-line="157" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/surat-keluar.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/dm/detailDMK.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-71">
-              <caret line="175" column="125" selection-start-line="175" selection-start-column="125" selection-end-line="175" selection-end-column="125" />
+            <state relative-caret-position="2482">
+              <caret line="146" column="82" selection-start-line="146" selection-start-column="82" selection-end-line="146" selection-end-column="82" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DisposisiMasukKabidController.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/dm/detailDMS.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2193">
-              <caret line="44" column="57" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
+            <state relative-caret-position="2482">
+              <caret line="146" column="48" selection-start-line="146" selection-start-column="44" selection-end-line="146" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -162,6 +209,7 @@
       <find>Steave</find>
       <find>next</find>
       <find>Next</find>
+      <find>search_dokumen_spesifik</find>
     </findStrings>
     <dirStrings>
       <dir>C:\xampp\htdocs\bappppeda_new</dir>
@@ -197,20 +245,25 @@
         <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PrintPDFController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/DisposisiMasukKabidController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/KonfigurasiController.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/SuratMasukController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/printPDF.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/SuratKeluarController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/surat-masuk.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/surat-keluar.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/DisposisiKeluarKabidController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/DisposisiMasukKabidController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/dk/detailDKS.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/dm/detailDMS.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/dm/detailDMK.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/home.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/dk/detailDKK.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/SuratMasukController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/SuratKeluarController.php" />
       </list>
     </option>
   </component>
@@ -365,7 +418,7 @@
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-174" />
     <option name="y" value="-20" />
     <option name="width" value="1346" />
@@ -389,6 +442,19 @@
               <item name="bappppeda_new" type="b2602c69:ProjectViewProjectNode" />
               <item name="bappppeda_new" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bappppeda_new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bappppeda_new" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Component" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bappppeda_new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bappppeda_new" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Component" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bappppeda_new" type="b2602c69:ProjectViewProjectNode" />
@@ -422,11 +488,6 @@
             <path>
               <item name="bappppeda_new" type="b2602c69:ProjectViewProjectNode" />
               <item name="bappppeda_new" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bappppeda_new" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bappppeda_new" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -447,7 +508,21 @@
               <item name="bappppeda_new" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="dk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bappppeda_new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bappppeda_new" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="dm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bappppeda_new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bappppeda_new" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bappppeda_new" type="b2602c69:ProjectViewProjectNode" />
@@ -531,17 +606,21 @@
       <workItem from="1548242365231" duration="245000" />
       <workItem from="1548253326675" duration="4026000" />
       <workItem from="1548259832567" duration="272000" />
-      <workItem from="1548299980603" duration="5674000" />
+      <workItem from="1548299980603" duration="6296000" />
+      <workItem from="1548344651652" duration="1579000" />
+      <workItem from="1548417105317" duration="9198000" />
+      <workItem from="1548466009200" duration="1961000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209260000" />
+    <option name="totallyTimeSpent" value="222620000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31491002" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33055976" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -556,7 +635,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50073206" side_tool="true" weight="0.25632912" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49926794" visible="true" weight="0.35309973" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49926794" visible="true" weight="0.352459" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -591,53 +670,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.htaccess" />
-    <entry file="file://$PROJECT_DIR$/index.php" />
-    <entry file="file://$PROJECT_DIR$/.env.example">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://G:/bappppeda_new/symlinkcreate.php" />
-    <entry file="file://$PROJECT_DIR$/artisan">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="25" column="45" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="45" />
-          <folding>
-            <element signature="e#44#72#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/SuratKeluarController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="79" column="35" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_26_135919_create_surat_keluars_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_24_053709_create_surat_masuks_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Component/Model/SuratKeluar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -769,13 +801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/SuratMasukController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="140" selection-start-line="140" selection-end-line="140" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/JabatanController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2137" />
@@ -826,10 +851,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/bappppeda-firebase-adminsdk-ywxlx-e4a81fb55d.json" />
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="50" column="42" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
+        <state relative-caret-position="133">
+          <caret line="128" column="259" selection-start-line="128" selection-start-column="259" selection-end-line="128" selection-end-column="259" />
         </state>
       </provider>
     </entry>
@@ -840,72 +866,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/SuratKeluarController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7259">
-          <caret line="436" column="10" selection-start-line="436" selection-start-column="10" selection-end-line="436" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
-          <folding>
-            <element signature="e#46#82#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/bappppeda-firebase-adminsdk-ywxlx-e4a81fb55d.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/SuratMasukController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="218" column="20" selection-start-line="218" selection-start-column="20" selection-end-line="218" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="28" column="8" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="128" column="259" selection-start-line="128" selection-start-column="259" selection-end-line="128" selection-end-column="259" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/surat-masuk.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
+        <state relative-caret-position="1955">
           <caret line="115" column="142" selection-start-line="115" selection-start-column="142" selection-end-line="115" selection-end-column="142" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/surat-keluar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
+        <state relative-caret-position="2975">
           <caret line="175" column="125" selection-start-line="175" selection-start-column="125" selection-end-line="175" selection-end-column="125" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DisposisiMasukKabidController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DisposisiKeluarKabidController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2193">
-          <caret line="44" column="57" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
+        <state relative-caret-position="170">
+          <caret line="240" column="44" lean-forward="true" selection-start-line="240" selection-start-column="44" selection-end-line="240" selection-end-column="44" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DisposisiKeluarSubidController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1044" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DisposisiMasukSubidController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-959" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DisposisiMasukKabidController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="155" column="10" selection-start-line="155" selection-start-column="10" selection-end-line="155" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Component/Model/DisposisiMasukKabid.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="166" column="141" selection-start-line="166" selection-start-column="141" selection-end-line="166" selection-end-column="141" />
+        <state relative-caret-position="2992">
+          <caret line="176" column="50" selection-start-line="172" selection-start-column="44" selection-end-line="176" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="30" column="110" selection-start-line="30" selection-start-column="90" selection-end-line="30" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/SuratMasukController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2312">
+          <caret line="140" selection-start-line="140" selection-end-line="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/dk/detailDKS.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2669">
+          <caret line="157" column="44" selection-start-line="157" selection-start-column="44" selection-end-line="157" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/dm/detailDMK.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2482">
+          <caret line="146" column="82" selection-start-line="146" selection-start-column="82" selection-end-line="146" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/dm/detailDMS.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2482">
+          <caret line="146" column="48" selection-start-line="146" selection-start-column="44" selection-end-line="146" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/dk/detailDKK.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="64" column="133" selection-start-line="64" selection-start-column="133" selection-end-line="64" selection-end-column="133" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Component/Model/User.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="57" column="99" selection-start-line="57" selection-start-column="76" selection-end-line="57" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/SuratMasukController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="337" column="5" lean-forward="true" selection-start-line="306" selection-start-column="4" selection-end-line="337" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/SuratKeluarController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="299" lean-forward="true" selection-start-line="299" selection-end-line="299" />
         </state>
       </provider>
     </entry>

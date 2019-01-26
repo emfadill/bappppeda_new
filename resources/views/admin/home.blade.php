@@ -150,6 +150,7 @@
                                             <th>Disposisi</th>
                                             <th>Diteruskan Kepada</th>
                                             <th>Status</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -167,7 +168,7 @@
                                             @elseif ($data->jenis_surat == 'Standar')
                                                 <td><h4><span class="label label-success label-rouded">{{$data->jenis_surat}}</span></h4></td>
                                             @endif
-                                            <td><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#largeModal{{$data->id}}">Tampil PDF</a>
+                                            <td><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#largeModalkeluar{{$data->id}}">Tampil PDF</a>
                                                 <a href="{{action('Admin\AdminController@printPDF')}}" class="btn btn-primary">Tampil PDF</a>
                                             @if ($data->url_dokumen_ttd != null)
                                             <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalkeluarTTD{{$data->id}}">Tampil PDF</a></td>
@@ -175,15 +176,17 @@
                                                 <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#largeModalkeluarTTD{{$data->id}}">Tampil PDF</a></td>
                                             @endif
                                                 @if ($data->url_disposisi != null)
-                                            <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalmasukDisposisi{{$data->id}}">Disposisi</a></td>
+                                            <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalkeluarDisposisi{{$data->id}}">Disposisi</a></td>
                                             @else
-                                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#largeModalmasukDisposisi{{$data->id}}">Disposisi</a></td>
+                                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#largeModalkeluarDisposisi{{$data->id}}">Disposisi</a></td>
                                             @endif
                                             <td>{{$data->kepada}}</td>
                                             @if ($data->status == 'Terkirim')
-                                            <td><h4><span class="label label-info label-rouded">{{$data->status}}</span></h4></td>
+                                                <td><h4><span class="label label-info label-rouded">{{$data->status}}</span></h4></td>
+                                                <td></td>
                                             @elseif ($data->status == 'Sudah Disposisi')
-                                            <td><h4><span class="label label-success label-rouded">{{$data->status}}</span></h4></td>
+                                                <td><h4><span class="label label-success label-rouded">{{$data->status}}</span></h4></td>
+                                                <td><a href="{{route('admin.detaildk.kabid',$data->id)}}" class="btn btn-danger">Detail Disposisi</a></td>
                                             @endif
                                         </tr>
                                         <div class="modal fade" id="largeModalkeluar{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">

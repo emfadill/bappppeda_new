@@ -159,7 +159,6 @@ class DisposisiMasukKabidController extends Controller
     }
         $this->validate($request, [
             'kepada' => 'required',
-            'instruksi' => 'required',
             'file' => 'required',
             'file.*' => 'file|mimes:pdf|max:2048'
         ]);
@@ -189,7 +188,6 @@ class DisposisiMasukKabidController extends Controller
         }
         $dataKepada = implode(",",$dataUser);
         $disposisiKabid = DisposisiMasukKabid::findOrFail($id);
-        $disposisiKabid->instruksi = $request->input('instruksi');
         $disposisiKabid->kepada = $dataKepada;
         $disposisiKabid->save();
 

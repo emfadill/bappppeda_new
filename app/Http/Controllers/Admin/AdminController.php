@@ -8,6 +8,7 @@ use App\Component\Model\DisposisiMasukKabid;
 use App\Component\Model\DisposisiKeluarKabid;
 use App\Component\Model\DisposisiMasukSubid;
 use App\Component\Model\DisposisiKeluarSubid;
+use App\Component\Model\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use PDF;
@@ -86,9 +87,10 @@ class AdminController extends Controller
 
      public function detaildk($id)
     {
+
         $suratkeluar = SuratKeluar::findOrFail($id);
         $DK = DisposisiKeluarKabid::where('surat_keluar_id',$id)->get();
-        return view('admin.dm.detailDKK',compact('suratkeluar','DK'));
+        return view('admin.dk.detailDKK',compact('suratkeluar','DK'));
     }
 
     public function detaildksubid($id)
