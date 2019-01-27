@@ -69,6 +69,12 @@
                                             <td><h4><span class="label label-info label-rouded">{{$suratkeluar->status}}</span></h4></td>
                                             @elseif ($suratkeluar->status == 'Sudah Disposisi')
                                             <td><h4><span class="label label-success label-rouded">{{$suratkeluar->status}}</span></h4></td>
+                                            @elseif ($data->status == 'Disposisi ttd-Manual')
+                                                <td><h4><span class="label label-success label-rouded">{{$data->status}}</span></h4></td>
+                                                <td><a href="{{route('admin.detaildk.kabid',$data->id)}}" class="btn btn-danger">Detail Disposisi</a></td>
+                                            @else
+                                                <td><h4><span class="label label-warning label-rouded">{{$data->status}}</span></h4></td>
+                                                <td></td>
                                             @endif
                                         </tr>
                                         <div class="modal fade" id="largeModalkeluar{{$suratkeluar->id}}" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">

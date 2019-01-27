@@ -342,19 +342,19 @@ class SuratKeluarController extends Controller
         }
         $this->validate($request, [
             'kepada' => 'required',
-            'disposisi' => 'required',
-            'disposisi.*' => 'file|mimes:pdf|max:2048',
+            'file' => 'file',
+            'file.*' => 'file|mimes:pdf|max:2048',
         ]);
 
         if ($request->hasFile('file')) {
-            $filename_disposisi = $request->disposisi->getClientOriginalName();
-            $name_only_disposisi = pathinfo($filename_disposisi, PATHINFO_FILENAME);
-            $ext_only_disposisi = $request->disposisi->getClientOriginalExtension();
+            $filename = $request->file->getClientOriginalName();
+            $name_only = pathinfo($filename, PATHINFO_FILENAME);
+            $ext_only = $request->file->getClientOriginalExtension();
 
-            $name_file_disposisi = str_replace(" ", "-", strtolower($name_only_disposisi));
-            $name_disposisi = $name_file_disposisi . '-' . date('His') . '.' . $ext_only_disposisi;
-            $request->disposisi->storeAs('public/surat_keluar/disposisi', $name_disposisi);
-            $path_disposisi = 'storage/surat_keluar/disposisi/' . $name_disposisi;
+            $name_file = str_replace(" ", "-", strtolower($name_only));
+            $name = $name_file . '-' . date('His') . '.' . $ext_only;
+            $request->file->storeAs('public/surat_keluar/disposisi', $name);
+            $path = 'storage/surat_keluar/disposisi/' . $name;
         }
 
         $kepada = $request->input('kepada');
@@ -379,8 +379,8 @@ class SuratKeluarController extends Controller
         $suratKeluar = SuratKeluar::findOrFail($id);
         $suratKeluar->kepada = $dataKepada;
         $suratKeluar->status = 'Disposisi ttd-Manual';
-        $suratKeluar->disposisi = $name_disposisi;
-        $suratKeluar->url_disposisi = $path_disposisi;
+        $suratKeluar->disposisi = $name;
+        $suratKeluar->url_disposisi = $path;
         $suratKeluar->save();
         foreach ($splitKepada as $key) {
             if($key == ""){
@@ -429,25 +429,25 @@ class SuratKeluarController extends Controller
     public function updateSuratKeluar_ditolak(Request $request,$id){
         $suratKeluar = SuratKeluar::findOrFail($id);
         $this->validate($request, [
-            'disposisi' => 'required',
-            'disposisi.*' => 'file|mimes:pdf|max:2048',
+            'file' => 'required',
+            'file.*' => 'file|mimes:pdf|max:2048',
         ]);
 
         if ($request->hasFile('file')) {
-            $filename_disposisi = $request->disposisi->getClientOriginalName();
-            $name_only_disposisi = pathinfo($filename_disposisi, PATHINFO_FILENAME);
-            $ext_only_disposisi = $request->disposisi->getClientOriginalExtension();
+            $filename = $request->file->getClientOriginalName();
+            $name_only = pathinfo($filename, PATHINFO_FILENAME);
+            $ext_only = $request->file->getClientOriginalExtension();
 
-            $name_file_disposisi = str_replace(" ", "-", strtolower($name_only_disposisi));
-            $name_disposisi = $name_file_disposisi . '-' . date('His') . '.' . $ext_only_disposisi;
-            $request->disposisi->storeAs('public/surat_keluar/disposisi', $name_disposisi);
-            $path_disposisi = 'storage/surat_keluar/disposisi/' . $name_disposisi;
+            $name_file = str_replace(" ", "-", strtolower($name_only));
+            $name = $name_file . '-' . date('His') . '.' . $ext_only;
+            $request->file->storeAs('public/surat_keluar/disposisi', $name);
+            $path = 'storage/surat_keluar/disposisi/' . $name;
         }
 
         $suratKeluar = SuratKeluar::findOrFail($id);
         $suratKeluar->status = 'Ditolak';
-        $suratKeluar->disposisi = $name_disposisi;
-        $suratKeluar->url_disposisi = $path_disposisi;
+        $suratKeluar->disposisi = $name;
+        $suratKeluar->url_disposisi = $path;
         $suratKeluar->save();
 
         /*$suratDisposisiKabid = DisposisiKeluarKabid::where('surat_keluar_id','=',$id)->get();*/
@@ -458,11 +458,11 @@ class SuratKeluarController extends Controller
                 'url_doc_disposisi' => url($key->url_disposisi)
             ];
         }*/
-        $suratKeluar->viewDKDitolak = [
+        /*$suratKeluar->viewDKDitolak = [
             'href' => 'api/v1/surat-keluar-disposisi-kabid/' .$id ,
             'method' => 'GET',
             'suratKeluarDisposisiKabid' => $suratDisposisiKabid
-        ];
+        ];*/
 
         $suratKeluar->viewSemuaSuratKeluar = [
             'href' => 'api/v1/surat-keluar',
