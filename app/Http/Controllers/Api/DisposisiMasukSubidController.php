@@ -56,7 +56,10 @@ class DisposisiMasukSubidController extends Controller
                 'url_doc_disposisi' => url($key->url_disposisi)
             ];
 
-            $suratMasuk = SuratMasuk::where('id','=',$key->get_disposisi->surat_masuk_id)->get();
+            $suratMasuk = SuratMasuk::where('id','=',$key->get_disposisi->surat_masuk_id)
+                                            ->orderBy('jenis_surat','ASC')
+                                            ->latest()
+                                            ->get();
                 foreach ($suratMasuk as $keys) {
                      
 

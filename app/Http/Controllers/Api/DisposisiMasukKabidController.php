@@ -16,7 +16,10 @@ class DisposisiMasukKabidController extends Controller
 {
     public function viewDisposisiKabid($id)
     {
-       $suratMasuk = SuratMasuk::where('id','=',$id)->first();
+       $suratMasuk = SuratMasuk::where('id','=',$id)
+                       ->orderBy('jenis_surat','ASC')
+                       ->latest()
+                       ->get();
        
        
         $disposisiKabid = DisposisiMasukKabid::with('get_user')->where('surat_masuk_id','=',$id)->get();   
@@ -90,7 +93,11 @@ class DisposisiMasukKabidController extends Controller
         ];
             }
            
-            $suratMasuk = SuratMasuk::where('id','=',$key->surat_masuk_id)->get();
+            $suratMasuk = SuratMasuk::where('id','=',$key->surat_masuk_id)
+                                        ->orderBy('jenis_surat','ASC')
+                                        ->latest()
+                                        ->get();
+
                 foreach ($suratMasuk as $keys) {
                      
 
@@ -109,8 +116,13 @@ class DisposisiMasukKabidController extends Controller
 
     public function viewDisposisiKabidDetail($id)
     {
-       $disposisiKabid = DisposisiMasukKabid::with('get_user')->findOrFail($id);   
-       $suratMasuk = SuratMasuk::where('id','=',$disposisiKabid->surat_masuk_id)->first();
+       $disposisiKabid = DisposisiMasukKabid::with('get_user')->findOrFail($id);
+        $suratMasuk = SuratMasuk::where('id','=',$disposisiKabid->surat_masuk_id)->first();
+
+       /*$suratMasuk = SuratMasuk::where('id','=',$disposisiKabid->surat_masuk_id)
+                                       ->orderBy('jenis_surat','ASC')
+                                       ->latest()
+                                       ->get();*/
        
         $suratMasuk->viewDMKabidAll = [
         	'href' => 'api/v1/surat-masuk/disposisi/kabid/',

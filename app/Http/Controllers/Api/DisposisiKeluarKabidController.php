@@ -16,7 +16,10 @@ class DisposisiKeluarKabidController extends Controller
 {
      public function viewDisposisiKabid($id)
     {
-       $suratKeluar = SuratKeluar::where('id','=',$id)->first();
+       $suratKeluar = SuratKeluar::where('id','=',$id)
+                        ->orderBy('jenis_surat','ASC')
+                        ->latest()
+                        ->get();
        
        
         $disposisiKabid = DisposisiKeluarKabid::with('get_user')->where('surat_keluar_id','=',$id)->get();   
@@ -90,7 +93,10 @@ class DisposisiKeluarKabidController extends Controller
         ];
             }
            
-            $suratKeluar = SuratKeluar::where('id','=',$key->surat_keluar_id)->get();
+            $suratKeluar = SuratKeluar::where('id','=',$key->surat_keluar_id)
+                                        ->orderBy('jenis_surat','ASC')
+                                        ->latest()
+                                        ->get();
                 foreach ($suratKeluar as $keys) {
                       
 
@@ -109,14 +115,19 @@ class DisposisiKeluarKabidController extends Controller
 
     public function viewDisposisiKabidDetail($id)
     {
-       $disposisiKabid = DisposisiKeluarKabid::with('get_user')->findOrFail($id);   
-       $suratKeluar = SuratKeluar::where('id','=',$disposisiKabid->surat_keluar_id)->first();
-       
+       $disposisiKabid = DisposisiKeluarKabid::with('get_user')->findOrFail($id);
+        $suratKeluar = SuratKeluar::where('id','=',$disposisiKabid->surat_keluar_id)->first();
+
+
+        /*$suratKeluar = SuratKeluar::where('id','=',$disposisiKabid->surat_keluar_id)
+            ->orderBy('jenis_surat','ASC')
+            ->latest()
+            ->get();*/
         $suratKeluar->viewDKKabidAll = [
         	'href' => 'api/v1/surat-keluar/disposisi/kabid/',
             'method' => 'GET'
         ];
-       
+
             if($disposisiKabid->kepada != null){
                 $disposisiSubid = DisposisiKeluarSubid::with('get_user')->where('diposisi_keluar_id','=',$disposisiKabid->id)->get();   
                 foreach ($disposisiSubid as $keys12345) {

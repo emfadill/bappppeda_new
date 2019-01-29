@@ -389,8 +389,8 @@ class SuratKeluarController extends Controller
                 $newDisposisiKabid = new DisposisiKeluarKabid([
                     'user_id' => $key,
                     'surat_keluar_id' => $id,
-                    'disposisi' => $name_disposisi,
-                    'url_disposisi' => $path_disposisi
+                    'disposisi' => $name,
+                    'url_disposisi' => $path
                 ]);
                 $newDisposisiKabid->save();
                 //notif untuk kabid

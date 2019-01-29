@@ -56,7 +56,11 @@ class DisposisiKeluarSubidController extends Controller
                 'url_doc_disposisi' => url($key->url_disposisi)
             ];
 
-            $suratKeluar = SuratKeluar::where('id','=',$key->get_disposisi->surat_keluar_id)->get();
+            $suratKeluar = SuratKeluar::where('id','=',$key->get_disposisi->surat_keluar_id)
+                                        ->orderBy('jenis_surat','ASC')
+                                        ->latest()
+                                        ->get();
+
                 foreach ($suratKeluar as $keys) {
                      
 
