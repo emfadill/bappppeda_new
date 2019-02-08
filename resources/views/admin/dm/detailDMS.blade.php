@@ -51,8 +51,8 @@
                                             @elseif ($suratmasuk->jenis_surat == 'Standar')
                                                 <td><h4><span class="label label-success label-rouded">{{$suratmasuk->jenis_surat}}</span></h4></td>
                                             @endif
-                                            <td><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#largeModal{{$suratmasuk->id}}">Tampil PDF</a>
-                                                <a href="{{action('Admin\AdminController@printPDF')}}" class="btn btn-primary">Tampil PDF</a>
+                                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#largeModal{{$suratmasuk->id}}">Preview<br>&<br>Cetak Surat</a>
+                                            
                                             </td>
                                             @if ($suratmasuk->url_disposisi != null)
                                             <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalmasukDisposisi{{$suratmasuk->id}}">Disposisi</a></td>
@@ -70,7 +70,7 @@
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h4 class="modal-title" id="myModalLabel">PDF</h4>
+                                                        <h3 class="modal-title" id="myModalLabel"><span class="label label-info label-rouded">Lihat dan Cetak Surat</h3>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
@@ -79,7 +79,7 @@
                                                         <iframe src="{{url($suratmasuk->url_dokumen)}}" height="600" width="850" frameborder="0"></iframe>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -89,7 +89,7 @@
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h4 class="modal-title" id="myModalLabel">PDF</h4>
+                                                        <h3 class="modal-title" id="myModalLabel"><span class="label label-info label-rouded">Lihat dan Cetak Disposisi</h3>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
@@ -98,7 +98,7 @@
                                                         <iframe src="{{url($suratmasuk->url_disposisi)}}" height="600" width="850" frameborder="0"></iframe>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -114,7 +114,7 @@
                  <div class="row bg-title">
                     <!-- .page title -->
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Diteruskan Kekabid</h4>
+                        <h4 class="page-title">Diteruskan Ke Kepala Bidang</h4>
                     </div>
                     <!-- /.page title -->
                     
@@ -124,7 +124,7 @@
                   <div class="row">
                     <div class="col-md-12">
                         <div class="white-box">
-                            <h3 class="box-title m-b-0">Data Surat Masuk Kabid</h3>
+                            <h3 class="box-title m-b-0">Data Surat Masuk Kepala Bidang</h3>
                             <div class="table-responsive">
                                 <table id="myTable2" class="table table-striped">
                                     <thead>
@@ -146,18 +146,18 @@
                                             @endif
                                             {{--<td>{{$DM->instruksi}}</td>--}}
                                                 @if ($DM->url_disposisi != null)
-                                            <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalmasukDisposisi{{$DM->id}}">Disposisi</a></td>
+                                            <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalmasukDisposisiKabid{{$DM->id}}">Disposisi</a></td>
                                             @else
-                                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#largeModalmasukDisposisi{{$DM->id}}">Disposisi</a></td>
+                                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#largeModalmasukDisposisiKabid{{$DM->id}}">Disposisi</a></td>
                                             @endif
                                             <td>{{$DM->kepada}}</td>
                                         </tr>
                                         @if ($DM->url_disposisi != null)
-                                        <div class="modal fade" id="largeModalkeluarDisposisi{{$DM->id}}" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                                        <div class="modal fade" id="largeModalmasukDisposisiKabid{{$DM->id}}" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h4 class="modal-title" id="myModalLabel">PDF</h4>
+                                                        <h3 class="modal-title" id="myModalLabel"><span class="label label-info label-rouded">Lihat dan Cetak Disposisi</h3>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
@@ -166,7 +166,7 @@
                                                         <iframe src="{{url($DM->url_disposisi)}}" height="600" width="850" frameborder="0"></iframe>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -178,7 +178,7 @@
                                                 <div class="modal-dialog modal-lg">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title" id="myModalLabel">PDF</h4>
+                                                            <h3 class="modal-title" id="myModalLabel"><span class="label label-info label-rouded">Lihat dan Cetak Disposisi</span></h3>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
@@ -187,7 +187,7 @@
                                                             <iframe src="{{url($DM->url_disposisi)}}" height="600" width="850" frameborder="0"></iframe>
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -204,7 +204,7 @@
                 <div class="row bg-title">
                     <!-- .page title -->
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Diteruskan keSubid</h4>
+                        <h4 class="page-title">Diteruskan Ke Sub Bidang</h4>
                     </div>
                     <!-- /.page title -->
                     
@@ -214,7 +214,7 @@
                   <div class="row">
                     <div class="col-md-12">
                         <div class="white-box">
-                            <h3 class="box-title m-b-0">Data Surat Masuk Subid</h3>
+                            <h3 class="box-title m-b-0">Data Surat Masuk Sub Bidang</h3>
                             <div class="table-responsive">
                                 <table id="myTable2" class="table table-striped">
                                     <thead>
@@ -230,17 +230,17 @@
                                             <td>{{$data->id}}</td>
                                             <td>{{$data->get_user->get_subid->name}}</td>
                                                 @if ($data->url_disposisi != null)
-                                            <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalmasukDisposisi{{$data->id}}">Disposisi</a></td>
+                                            <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalmasukDisposisiSubid{{$data->id}}">Disposisi</a></td>
                                             @else
-                                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#largeModalmasukDisposisi{{$data->id}}">Disposisi</a></td>
+                                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#largeModalmasukDisposisiSubid{{$data->id}}">Disposisi</a></td>
                                             @endif
                                         </tr>
                                         @if ($data->url_disposisi != null)
-                                        <div class="modal fade" id="largeModalkeluarDisposisi{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                                        <div class="modal fade" id="largeModalmasukDisposisiSubid{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h4 class="modal-title" id="myModalLabel">PDF</h4>
+                                                        <h3 class="modal-title" id="myModalLabel"><span class="label label-info label-rouded">Lihat dan Cetak Disposisi</span></h3>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
@@ -249,7 +249,7 @@
                                                         <iframe src="{{url($data->url_disposisi)}}" height="600" width="850" frameborder="0"></iframe>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -261,7 +261,7 @@
                                                 <div class="modal-dialog modal-lg">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title" id="myModalLabel">PDF</h4>
+                                                            <h3 class="modal-title" id="myModalLabel"><span class="label label-info label-rouded">Lihat dan Cetak Disposisi</span></h3>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
@@ -270,7 +270,7 @@
                                                             <iframe src="{{url($data->url_disposisi)}}" height="600" width="850" frameborder="0"></iframe>
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
                                                         </div>
                                                     </div>
                                                 </div>

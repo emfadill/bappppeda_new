@@ -16,10 +16,7 @@ class DisposisiMasukKabidController extends Controller
 {
     public function viewDisposisiKabid($id)
     {
-       $suratMasuk = SuratMasuk::where('id','=',$id)
-                       ->orderBy('jenis_surat','ASC')
-                       ->latest()
-                       ->get();
+       $suratMasuk = SuratMasuk::findOrFail($id);
        
        
         $disposisiKabid = DisposisiMasukKabid::with('get_user')->where('surat_masuk_id','=',$id)->get();   
@@ -65,7 +62,12 @@ class DisposisiMasukKabidController extends Controller
 
     public function viewDisposisiKabidSpesifik()
     {
-        $disposisiKabid = DisposisiMasukKabid::with('get_user')->where('user_id','=',Auth::User()->id)->get();  
+
+
+        $disposisiKabid = DisposisiMasukKabid::with('get_user','get_surat')->whereHas('get_surat',function ($query){
+            $query->orderBy('jenis_surat','ASC')
+                ->latest();
+        })->where('user_id','=',Auth::User()->id)->get();
         foreach ($disposisiKabid as $key) {
             $key->viewDMKabidDetail = [
                 'href' => 'api/v1/surat-masuk/disposisi/kabid/' .$key->id,
@@ -188,7 +190,7 @@ class DisposisiMasukKabidController extends Controller
         }
 
         $kepada = $request->input('kepada');
-        $splitKepada = explode(",",$kepada);
+        $splitKepada = explode(", ",$kepada);
                 
         foreach ($splitKepada as $key) {
             if($key == ""){
@@ -198,7 +200,7 @@ class DisposisiMasukKabidController extends Controller
             $dataUser[] = $user->get_subid->name;
             }           
         }
-        $dataKepada = implode(",",$dataUser);
+        $dataKepada = implode(", ",$dataUser);
         $disposisiKabid = DisposisiMasukKabid::findOrFail($id);
         $disposisiKabid->kepada = $dataKepada;
         $disposisiKabid->save();

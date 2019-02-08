@@ -48,7 +48,11 @@ class DisposisiKeluarSubidController extends Controller
 
      public function viewDisposisiSubidSpesifik()
     {
-        $disposisiSubid = DisposisiKeluarSubid::with('get_user','get_disposisi')->where('user_id','=',Auth::User()->id)->get();  
+        /*$disposisiSubid = DisposisiKeluarSubid::with('get_user','get_surat')->whereHas('get_surat',function ($query){
+            $query->orderBy('jenis_surat','ASC')
+                ->latest();
+        })->where('user_id','=',Auth::User()->id)->get();*/
+        $disposisiSubid = DisposisiKeluarSubid::with('get_user','get_disposisi')->where('user_id','=',Auth::User()->id)->get();
         foreach ($disposisiSubid as $key) {
             $key->viewDKSubidDetail = [
                 'href' => 'api/v1/surat-keluar/disposisi/subid/' .$key->id,

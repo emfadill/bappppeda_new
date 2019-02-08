@@ -28,7 +28,7 @@
                             <p class="text-muted m-b-30">Pengaturan akun untuk user</p>
                            
                             <div class="table-responsive order-detail-content">
-                                <table id="myTable2" class="table table-striped">
+                                <table id="myTable1" class="table table-striped">
                                     <thead>
                                         <tr>
                                           <th>No</th>
@@ -46,7 +46,8 @@
                                             <td>{{$data->id}}</td>
                                             <td>{{$data->username}}</td>
                                             <td>{{$data->name}}</td>
-                                            <td>{{$data->get_jabatan->name}}</td>@if($data->kabid_id == null)
+                                            <td>{{$data->get_jabatan->name}}</td>
+                                            @if($data->kabid_id == null)
                                             <td></td>
                                             @else
                                             <td>{{$data->get_kabid->name}}</td>
@@ -60,9 +61,9 @@
                                               <form action="{{ route('admin.pengaturan.delete',$data->id) }}" id="delete" method="POST">  {{ csrf_field() }}
                                                     {{method_field('delete')}}
 
-                                            <td><a class="btn btn-block btn-info fa fa-pencil" href="{{ route('admin.edit-akun',$data->id)}}"></a>
+                                            <a class="btn btn-lg btn-info margin" href="{{ route('admin.edit-akun',$data->id)}}" data-toggle="tooltip" data-placement="bottom" data-original-title="Edit Data"><i class="fa fa-pencil"></i></a>
                                                    
-                                                <a data-id="{{$data->id}}"  href="javascript:;" class="btn btn-block btn-danger fa fa-trash btn-del-cart"></a>
+                                                <a data-id="{{$data->id}}"  href="javascript:;" class="btn btn-lg btn-danger btn-del-cart" data-toggle="tooltip" data-placement="bottom" data-original-title="Hapus Data"><i class="fa fa-trash"></i></a>
                                             </td>
                                             </form>
                                         </tr>

@@ -48,7 +48,9 @@ class SubidController extends Controller
     {
          $rules = array(
             'kabid' => ['required'],
-            'name' => ['required','unique:sub_bidangs']            
+            'kabid.required' => ['Kepala Bidang wajib diisi.'],
+            'name' => ['required','unique:sub_bidangs'],
+            'name.required' => ['nama sub bidang wajib diisi.']            
         );
 
         $validator = Validator::make ( $request->all(), $rules);

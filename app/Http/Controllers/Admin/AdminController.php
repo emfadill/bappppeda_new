@@ -34,12 +34,8 @@ class AdminController extends Controller
     public function index()
     {
         // $wcppScript = WebClientPrint::createWcppDetectionScript(action('WebClientPrintController@processRequest'), Session::getId());
-        $suratmasuk = SuratMasuk::orderBy('jenis_surat','ASC')
-            ->latest()
-            ->get();
-        $suratkeluar = SuratKeluar::orderBy('jenis_surat','ASC')
-            ->latest()
-            ->get();
+        $suratmasuk = SuratMasuk::orderBy('id','DESC')->get();
+        $suratkeluar = SuratKeluar::orderBy('id','DESC')->get();
         return view('admin.home', compact('suratmasuk','suratkeluar'));
         // return view('admin.home', compact('suratmasuk','suratkeluar'),['wcppScript' => $wcppScript]);
     }

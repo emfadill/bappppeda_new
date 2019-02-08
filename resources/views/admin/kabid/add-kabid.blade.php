@@ -19,8 +19,8 @@
 
                 <div class="col-md-12">
                          <div class="white-box">
-                            <h3 class="box-title m-b-0">Form with right icon</h3>
-                            <p class="text-muted m-b-30 font-13"> Use Bootstrap's predefined grid classes for horizontal form </p>
+                            <h3 class="box-title m-b-0">Form tambah data kepala bidang</h3>
+                            <p class="text-muted m-b-30 font-13"> Isi sesuai nama jabatan kepala bidang  </p>
                              @if($errors->count() > 0)
                         <div class="alert alert-danger alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -33,7 +33,7 @@
                                 {{csrf_field()}}
                               
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1" class="col-sm-3 control-label">Nama</label>
+                                    <label for="exampleInputEmail1" class="col-sm-3 control-label">Nama Jabatan</label>
                                     <div class="col-sm-9">
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="exampleInputNama" placeholder="Masukkan Nama" name="name" value="{{ old('name')}}">
@@ -44,13 +44,10 @@
                                 <div class="form-group m-b-0">
                                     <div class="col-sm-offset-3 col-sm-9 text-right">
                                         <button type="submit" class="btn btn-info waves-effect waves-light m-t-10">Tambah</button>
+                                        <a href="{{route('admin.kabid')}}" class="btn btn-info waves-effect waves-light m-t-10">Kembali</a>
                                     </div>
                                 </div>
-                                <div class="form-group m-b-0">
-                                    <div class="col-sm-offset-3 col-sm-9 text-right">
-                                        <a href="{{route('admin.subid')}}" class="btn btn-info waves-effect waves-light m-t-10">Kembali</a>
-                                    </div>
-                                </div>
+                                
                             </form>
                         </div>
                     </div>

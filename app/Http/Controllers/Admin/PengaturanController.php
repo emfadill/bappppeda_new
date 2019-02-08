@@ -22,7 +22,7 @@ class PengaturanController extends Controller
      */
     public function index()
     {
-        $akun = User::all();
+        $akun = User::orderBy('id','DESC')->get();
         return view('admin.pengaturan-akun', compact('akun'));
     }
 
@@ -92,9 +92,13 @@ class PengaturanController extends Controller
     {
         $rules = array(
             'name' => ['required', 'string'],
+            'name.required' => 'nama wajib diisi.',
             'username' => ['required', 'string'],
+            'username.required' => 'username wajib diisi.',
             'nik' => ['required'],
+            'nik.required' => 'nik wajib diisi.',
             'jabatan' => ['required'],
+            'jabatan.required' => 'jabatan wajib diisi.'
         );
 
         $validator = Validator::make ( $request->all(), $rules);
@@ -197,6 +201,8 @@ class PengaturanController extends Controller
             if($request->get('password') != null){
               $rules = array(
                 'password' => ['required', 'string', 'min:6', 'confirmed'],
+                'password.required' => 'password tidak sama. Coba lagi.',
+
             );
         $validator = Validator::make ( $request->all(), $rules);
         if ($validator->fails()) {
@@ -238,10 +244,16 @@ class PengaturanController extends Controller
         // dd($request->all());
         $rules = array(
             'name' => ['required', 'string'],
+            'name.required' => ['nama wajib diisi.'],
             'username' => ['required', 'string', 'unique:users'],
+            'username.required' => ['username wajib diisi.'],
+            'name.required' => ['nama wajib diisi.'],
             'nik' => ['required','unique:users'],
+            'nik.required' => ['nik wajib diisi.'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'password.required' => ['password tidak sama. Coba lagi.'],
             'jabatan' => ['required'],
+            'jabatan.required' => ['jabatan wajib diisi.']
         );
 
         $validator = Validator::make ( $request->all(), $rules);

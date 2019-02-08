@@ -54,8 +54,7 @@
                                             @elseif ($data->jenis_surat == 'Standar')
                                                 <td><h4><span class="label label-success label-rouded">{{$data->jenis_surat}}</span></h4></td>
                                             @endif
-                                            <td><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#largeModal{{$data->id}}">Tampil PDF</a>
-                                                <a href="{{action('Admin\AdminController@printPDF')}}" class="btn btn-primary">Tampil PDF</a>
+                                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#largeModal{{$data->id}}">Preview<br>&<br>Cetak Surat</a>
                                             </td>
                                             @if ($data->url_disposisi != null)
                                             <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalmasukDisposisi{{$data->id}}">Disposisi</a></td>
@@ -76,7 +75,7 @@
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h4 class="modal-title" id="myModalLabel">PDF</h4>
+                                                        <h3 class="modal-title" id="myModalLabel"><span class="label label-info label-rouded">Lihat dan Cetak Surat</span></h3>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
@@ -85,7 +84,7 @@
                                                         <iframe src="{{url($data->url_dokumen)}}" height="600" width="850" frameborder="0"></iframe>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -95,7 +94,7 @@
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h4 class="modal-title" id="myModalLabel">PDF</h4>
+                                                        <h3 class="modal-title" id="myModalLabel"><span class="label label-info label-rouded">Lihat dan Cetak Disposisi</span></h3>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
@@ -104,7 +103,7 @@
                                                         <iframe src="{{url($data->url_disposisi)}}" height="600" width="850" frameborder="0"></iframe>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -168,8 +167,8 @@
                                             @elseif ($data->jenis_surat == 'Standar')
                                                 <td><h4><span class="label label-success label-rouded">{{$data->jenis_surat}}</span></h4></td>
                                             @endif
-                                            <td><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#largeModalkeluar{{$data->id}}">Tampil PDF</a>
-                                                <a href="{{action('Admin\AdminController@printPDF')}}" class="btn btn-primary">Tampil PDF</a>
+                                            <td>
+                                                <a href="#" class="btn btn-info" data-toggle="modal" data-target="#largeModalkeluar{{$data->id}}">Preview<br>&<br>Cetak Surat</a></td>
                                             @if ($data->url_dokumen_ttd != null)
                                             <td><a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModalkeluarTTD{{$data->id}}">Tampil Surat</a></td>
                                             @else
@@ -199,7 +198,7 @@
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h4 class="modal-title" id="myModalLabel">PDF</h4>
+                                                        <h3 class="modal-title" id="myModalLabel"><span class="label label-info label-rouded">Lihat dan Cetak Surat</span></h3>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
@@ -208,7 +207,7 @@
                                                         <iframe src="{{url($data->url_dokumen)}}" height="600" width="850" frameborder="0"></iframe>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -218,7 +217,7 @@
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h4 class="modal-title" id="myModalLabel">PDF</h4>
+                                                        <h3 class="modal-title" id="myModalLabel"><span class="label label-info label-rouded">Lihat dan Cetak Disposisi</span></h3>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
@@ -227,7 +226,7 @@
                                                         <iframe src="{{url($data->url_disposisi)}}" height="600" width="850" frameborder="0"></iframe>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -239,7 +238,7 @@
                                                 <div class="modal-dialog modal-lg">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title" id="myModalLabel">PDF</h4>
+                                                            <h3 class="modal-title" id="myModalLabel"><span class="label label-info label-rouded">Lihat dan Cetak Disposisi</span></h3>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
@@ -248,7 +247,7 @@
                                                             <iframe src="{{url($data->url_dokumen_ttd)}}" height="600" width="850" frameborder="0"></iframe>
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                                                         </div>
                                                     </div>
                                                 </div>

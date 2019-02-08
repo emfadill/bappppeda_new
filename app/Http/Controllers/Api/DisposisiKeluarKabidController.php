@@ -65,7 +65,10 @@ class DisposisiKeluarKabidController extends Controller
 
     public function viewDisposisiKabidSpesifik()
     {
-        $disposisiKabid = DisposisiKeluarKabid::with('get_user')->where('user_id','=',Auth::User()->id)->get();  
+        $disposisiKabid = DisposisiKeluarKabid::with('get_user','get_surat')->whereHas('get_surat',function ($query){
+            $query->orderBy('jenis_surat','ASC')
+                ->latest();
+        })->where('user_id','=',Auth::User()->id)->get();
         foreach ($disposisiKabid as $key) {
             $key->viewDKKabidDetail = [
                 'href' => 'api/v1/surat-keluar/disposisi/kabid/' .$key->id,
@@ -187,7 +190,7 @@ class DisposisiKeluarKabidController extends Controller
         }
 
         $kepada = $request->input('kepada');
-        $splitKepada = explode(",",$kepada);
+        $splitKepada = explode(", ",$kepada);
                 
         foreach ($splitKepada as $key) {
             if($key == ""){
@@ -197,7 +200,7 @@ class DisposisiKeluarKabidController extends Controller
             $dataUser[] = $user->get_subid->name;
             }           
         }
-        $dataKepada = implode(",",$dataUser);
+        $dataKepada = implode(", ",$dataUser);
         $disposisiKabid = DisposisiKeluarKabid::findOrFail($id);
         $disposisiKabid->kepada = $dataKepada;
         $disposisiKabid->save();

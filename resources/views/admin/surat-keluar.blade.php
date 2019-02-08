@@ -45,6 +45,17 @@
             z-order: 0;
 
         }
+        .stepwizard-row:after {
+            top: 14px;
+            bottom: 0;
+            position: absolute;
+            content: " ";
+            width: 100%;
+            height: 1px;
+            background-color: #00AEEF;
+            z-order: 0;
+
+        }
 
         .stepwizard-step {
             display: table-cell;
@@ -60,6 +71,7 @@
             font-size: 12px;
             line-height: 1.428571429;
             border-radius: 15px;
+            background-color: #00AEEF;
         }
     </style>
 
@@ -92,15 +104,15 @@
                             <div class="stepwizard">
                                 <div class="stepwizard-row setup-panel">
                                     <div class="stepwizard-step">
-                                        <a href="#step-1" class="btn btn-primary btn-circle">1</a>
+                                        <a href="#step-1" class="btn btn-primary btn-circle" style="color: #ffffff">1</a>
                                         <p>Scan atau Upload Surat Keluar</p>
                                     </div>
                                     <div class="stepwizard-step">
-                                        <a href="#step-2" class="btn btn-default btn-circle cursor-not-allow" disabled>2</a>
+                                        <a href="#step-2" class="btn btn-default btn-circle cursor-not-allow" disabled style="color: #ffffff">2</a>
                                         <p>Masukkan Title dan Subject</p>
                                     </div>
                                     <div class="stepwizard-step">
-                                        <a href="#step-3" class="btn btn-default btn-circle cursor-not-allow" disabled>3</a>
+                                        <a href="#step-3" class="btn btn-default btn-circle cursor-not-allow" disabled style="color: #ffffff">3</a>
                                         <p>Pilih Jenis Surat</p>
                                     </div>
                                 </div>
@@ -110,15 +122,46 @@
                                 {{ method_field('post') }}
                                 <div class="row setup-content" id="step-1">
                                     <div class="col-xs-12">
+                                        <div class="row">
                                         <div class="col-md-12">
                                             <h3> Step 1</h3>
                                             <div class="form-group {{ !$errors->has('file') ?: 'has-error' }}">
-                                                <input type="file" id="input-file-now-custom-2" name="file" class="dropify" data-height="500" required="required" />
+                                                <input type="file" id="input-file-now-custom-2" name="file" class="dropify" data-height="300" required="required" />
+                                                <button href="#" class="btn btn-lg btn-info center-block" data-toggle="modal" data-target="#largeModal" value="Preview" onclick="PreviewImage();">Lihat Dokumen</button>
+
 
                                             </div>
-                                            <button class="btn btn-info nextBtn btn-lg pull-right cursor-not-allow" type="button" >Selanjutnya</button>
+
+
+                                            </div>
+                                            <div class="row">
+                                                <button class="btn btn-info nextBtn btn-lg pull-right cursor-not-allow" type="button" >Selanjutnya</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h3 class="modal-title" id="myModalLabel"><span class="label label-info label-rouded">Lihat Dokumen</span></h3>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div style="clear:both">
+                                                        <iframe id="viewer" frameborder="0" scrolling="no" width="850" height="600"></iframe>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
                                 <div class="row setup-content" id="step-2">
                                     <div class="col-xs-12">
@@ -126,14 +169,14 @@
                                             <h3> Step 2</h3>
                                             <div class="form-group">
                                                 <div class="row">
-                                                    <label class="col-xs-3 control-label">Indeks</label>
+                                                    <label class="col-xs-4 control-label text-right">Indeks</label>
                                                     <div class="col-xs-5">
                                                         <input type="text" class="form-control" name="indeks" required /><br>
                                                     </div>
                                                 </div>
 
                                                 <div class="row">
-                                                    <label class="col-xs-3 control-label">Dari</label>
+                                                    <label class="col-xs-4 control-label text-right">Dari</label>
                                                     <div class="col-xs-5">
 
                                                         <input type="text" class="form-control" name="dari" required/><br>
@@ -142,21 +185,21 @@
                                                 </div>
 
                                                 <div class="row">
-                                                    <label class="col-xs-3 control-label">Tujuan</label>
+                                                    <label class="col-xs-4 control-label text-right">Tujuan</label>
                                                     <div class="col-xs-5">
                                                         <input type="text" class="form-control" name="tujuan" required/><br>
                                                     </div>
                                                 </div>
 
                                                 <div class="row">
-                                                    <label class="col-xs-3 control-label">Perihal</label>
+                                                    <label class="col-xs-4 control-label text-right">Perihal</label>
                                                     <div class="col-xs-5">
                                                         <textarea class="form-control" rows="5" name="perihal" required></textarea><br>
                                                     </div>
                                                 </div>
 
                                                 <div class="row">
-                                                    <label class="col-xs-3 control-label">Tgl / No Surat
+                                                    <label class="col-xs-4 control-label text-right">Tgl / No Surat
                                                     </label>
                                                     <div class="col-xs-5">
                                                         <input type="text" class="form-control" name="tgl_no_surat" required /><br>
@@ -164,7 +207,7 @@
                                                 </div>
 
                                                 <div class="row">
-                                                    <label class="col-xs-3 control-label">Tgl Surat Keluar</label>
+                                                    <label class="col-xs-4 control-label text-right">Tgl Surat Keluar</label>
                                                     <div class="col-xs-5">
                                                         <div class="input-group">
                                                             <input type="text" class="form-control" id="datepicker-autoclosed" placeholder="mm/dd/yyyy" name="tgl_surat_keluar" required><span class="input-group-addon"><i class="icon-calender"></i></span>
@@ -182,22 +225,23 @@
                                     <div class="col-xs-12">
                                         <div class="col-md-12">
                                             <h3> Step 3</h3>
-                                            <div class="form-group">
-                                                <div class="radio radio-danger">
-                                                    <input type="radio" name="jenis_surat" id="radio6" value="Express" style="display: none">
-
-                                                    <label for="radio6" class="btn btn-danger btn-rounded waves-effect waves-light"><i class="fa fa-envelope-o"> Express</i> </label>
+                                            <div class="form-group col-xs-4">
+                                                <div class="radio radio-danger pull-right">
+                                                    <input type="radio" name="jenis_surat" id="radio6" value="Express">
+                                                    <label for="radio6"><h2><span class="btn btn-lg btn-danger btn-rounded waves-effect waves-light"><i class="fa fa-envelope-o"></i> Express</span></h2></label>
+                                                    {{--<label for="radio6" class="btn btn-lg btn-danger btn-rounded waves-effect waves-light"><i class="fa fa-envelope-o"></i> Express </label>--}}
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <div class="radio radio-danger">
-                                                    <input type="radio" name="jenis_surat" id="radio7" value="Standar" style="display: none">
-
-                                                    <label for="radio7" class="btn btn-success btn-rounded waves-effect waves-light"><i class="fa fa-envelope-o"> Standar</i> </label>
+                                            <div class="form-group col-xs-5">
+                                                <div class="radio radio-success pull-right">
+                                                    <input type="radio" name="jenis_surat" id="radio7" value="Standar">
+                                                    <label for="radio7"><h2><span class="btn btn-lg btn-success btn-rounded waves-effect waves-light"><i class="fa fa-envelope-o"></i> Standar</span></h2> </label>
+                                                    {{--<label for="radio7" class="btn btn-lg btn-success btn-rounded waves-effect waves-light"><i class="fa fa-envelope-o"></i> Standar </label>--}}
                                                 </div>
                                             </div>
-                                            <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
-                                        </div>
+
+                                            </div>
+                                        <button class="btn btn-success btn-lg pull-right" type="submit">KIRIM</button>
                                     </div>
                                 </div>
                             </form>
@@ -208,8 +252,15 @@
         </div>
                 <!-- /.row -->
                     <script src="{{asset('js/app.js')}}"></script>
-                    <script src="js/sweetalert.min.js"></script>
                     @include('sweet::alert')
+
+    <script type="text/javascript">
+        function PreviewImage() {
+            pdffile=document.getElementById("input-file-now-custom-2").files[0];
+            pdffile_url=URL.createObjectURL(pdffile);
+            $('#viewer').attr('src',pdffile_url);
+        }
+    </script>
 
     <script type="text/javascript">
         $(document).ready(function () {

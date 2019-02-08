@@ -19,8 +19,8 @@
 
                 <div class="col-md-12">
                          <div class="white-box">
-                            <h3 class="box-title m-b-0">Form with right icon</h3>
-                            <p class="text-muted m-b-30 font-13"> Use Bootstrap's predefined grid classes for horizontal form </p>
+                            <h3 class="box-title m-b-0">Form Tambah Akun</h3>
+                            <p class="text-muted m-b-30 font-13"> Isi data akun sesuai form yang tersedia. </p>
                              @if($errors->count() > 0)
                         <div class="alert alert-danger alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -35,9 +35,11 @@
                                     <label for="exampleInputuname" class="col-sm-3 control-label">Username*</label>
                                     <div class="col-sm-9">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputuname" placeholder="Masukkan Username" name="username" value="{{ old('username')}}">
+                                            <input type="text" class="form-control" id="exampleInputuname" placeholder="Masukkan Username" name="username" value="{{ old('username')}}" required>
                                             <div class="input-group-addon"><i class="ti-user"></i></div>
+
                                         </div>
+                                        <span class="help-block error"> Username tidak boleh spasi.</span>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -62,16 +64,18 @@
                                     <label for="inputPassword3" class="col-sm-3 control-label">Password*</label>
                                     <div class="col-sm-9">
                                         <div class="input-group">
-                                            <input type="password" class="form-control" id="exampleInputpwd2" placeholder="Masukkan Password" name="password">
+                                            <input type="password" class="form-control" id="exampleInputpwd2" placeholder="Masukkan Password" name="password" required>
                                             <div class="input-group-addon"><i class="ti-lock"></i></div>
                                         </div>
+                                        <span class="help-block error"> *Password tidak boleh spasi.</span>
+                                        <span class="help-block error"> *Password Min 7 Karakter.</span>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPassword4" class="col-sm-3 control-label">Re Password*</label>
                                     <div class="col-sm-9">
                                         <div class="input-group">
-                                            <input type="password" class="form-control" id="exampleInputpwd2" placeholder="Masukkan Kembali Password" name="password_confirmation">
+                                            <input type="password" class="form-control" id="exampleInputpwd2" placeholder="Masukkan Kembali Password" name="password_confirmation" required>
                                             <div class="input-group-addon"><i class="ti-lock"></i></div>
                                         </div>
                                     </div>
@@ -110,13 +114,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group m-b-0">
-                                    <div class="col-sm-offset-3 col-sm-9 text-right">
-                                        <button type="submit" class="btn btn-info waves-effect waves-light m-t-10">Tambah</button>
-                                    </div>
-                                </div>
-                                <div class="form-group m-b-0">
-                                    <div class="col-sm-offset-3 col-sm-9 text-right">
-                                        <a href="{{route('admin.pengaturan-akun')}}" class="btn btn-info waves-effect waves-light m-t-10">Kembali</a>
+                                    <div class="col-sm-offset-4 col-sm-8 text-right">
+                                        <button type="submit" class="btn btn-info waves-effect waves-light">Tambah</button>
+                                        <a href="{{route('admin.pengaturan-akun')}}" class="btn btn-info waves-effect waves-light">Kembali</a>
                                     </div>
                                 </div>
                             </form>

@@ -195,7 +195,7 @@ class SuratMasukController extends Controller
         }
 
         $kepada = $request->input('kepada');
-        $splitKepada = explode(",",$kepada);
+        $splitKepada = explode(", ",$kepada);
         $jabatan_skt = Jabatan::where('name','=','Sekretaris')->first();
         $sekretaris = User::with('get_jabatan','get_kabid','get_subid')->where('jabatan_id','=',$jabatan_skt->id)->first();
 
@@ -211,7 +211,7 @@ class SuratMasukController extends Controller
                  }
             }           
         }
-        $dataKepada = implode(",",$dataUser);
+        $dataKepada = implode(", ",$dataUser);
         $suratMasuk = SuratMasuk::findOrFail($id);
         $suratMasuk->tgl_penyelesaian = $request->input('tgl_penyelesaian');
         $suratMasuk->kepada = $dataKepada;
@@ -309,30 +309,102 @@ class SuratMasukController extends Controller
         $idUser = Auth::User()->id;
 
         $data = $request->input('search');
-        $suratMasuk = SuratMasuk::with('get_user')
+        $disposisiKabid = DisposisiMasukKabid::with('get_user')
             ->whereHas('get_user',function ($query) use ($idUser){
                 $query->whereIn('id',[$idUser]);
             })
-            ->where('dokumen','like',"%{$data}%")
+            ->where('disposisi','like',"%{$data}%")
             ->get();
 
-        foreach ($suratMasuk as $key)
+        foreach ($disposisiKabid as $key)
         {
-            $key->viewSMDetail = [
-                'href' => 'api/v1/surat-masuk/' .$key->id,
-                'url_doc' => url($key->url_dokumen),
+            $key->viewDMDetail = [
+                'href' => 'api/v1/surat-masuk/disposisi/kabid/' .$key->id,
+                'url_doc' => url($key->url_disposisi),
                 'method' => 'GET'
             ];
 
             $key->teruskanSM = [
-                'href' => 'api/v1/surat-masuk/' .$key->id,
-                'params' => 'kepada,status,user_id,cek,disposisi,url_disposisi',
+                'href' => 'api/v1/surat-masuk/disposisi/kabid/' .$key->id,
+                'params' => 'kepada,disposisi,url_disposisi',
                 'method' => 'POST'
+            ];
+
+            if($key->kepada != null){
+                $disposisiSubid = DisposisiMasukSubid::with('get_user')->where('diposisi_masuk_id','=',$key->id)->get();
+                foreach ($disposisiSubid as $keys12345) {
+                    $keys12345->viewDMSubidDetail = [
+                        'href' => 'api/v1/surat-masuk/disposisi/subid/' .$keys12345->id,
+                        'method' => 'GET',
+                        'url_doc_disposisi' => url($keys12345->url_disposisi)
+                    ];
+                }
+                $key->DMSubid = [
+                    'Disposisi Masuk Subid' => $disposisiSubid
+                ];
+            }else{
+                $key->teruskanDMKeSubid = [
+                    'href' => 'api/v1/surat-masuk/disposisi/kabid/' .$key->id,
+                    'params' => 'kepada,disposisi',
+                    'method' => 'POST'
+                ];
+            }
+
+            $suratMasuk = SuratMasuk::where('id','=',$key->surat_masuk_id)
+                ->orderBy('jenis_surat','ASC')
+                ->latest()
+                ->get();
+
+            foreach ($suratMasuk as $keys) {
+
+
+            }
+            $key->suratMasuk = [
+                'Surat Masuk' => $suratMasuk
             ];
         }
         $response = [
-            'msg' => 'List Data Pencarian Data Surat Masuk Dari ' .$data,
-            'suratMasuk' => $suratMasuk
+            'msg' => 'List Data Pencarian Disposisi Surat Masuk Dari ' .$data,
+            'disposisiKabid' => $disposisiKabid
+        ];
+        return response()->json($response,200);
+    }
+
+    public function search_dokumen_spesifik_subid(request $request)
+    {
+        $idUser = Auth::User()->id;
+
+        $data = $request->input('search');
+        $disposisiSubid = DisposisiMasukSubid::with('get_user')
+            ->whereHas('get_user',function ($query) use ($idUser){
+                $query->whereIn('id',[$idUser]);
+            })
+            ->where('disposisi','like',"%{$data}%")
+            ->get();
+
+        foreach ($disposisiSubid as $key)
+        {
+            $key->viewDMDetail = [
+                'href' => 'api/v1/surat-masuk/disposisi/subid/' .$key->id,
+                'url_doc' => url($key->url_disposisi),
+                'method' => 'GET'
+            ];
+
+            $suratMasuk = SuratMasuk::where('id','=',$key->get_disposisi->surat_masuk_id)
+                ->orderBy('jenis_surat','ASC')
+                ->latest()
+                ->get();
+            foreach ($suratMasuk as $keys) {
+
+
+            }
+            $key->suratMasuk = [
+                'Surat Masuk' => $suratMasuk
+            ];
+        }
+        $response = [
+            'msg' => 'List Data Pencarian Disposisi Surat Masuk Dari ' .$data,
+            'disposisiSubid' => $disposisiSubid
         ];
         return response()->json($response,200);
     }

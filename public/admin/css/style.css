@@ -2495,9 +2495,9 @@ ul.common li a:hover {
   padding-bottom: 0px;
 }
 .message-center a {
-  border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+  border-bottom: 1px solid #cbcbcb;
   display: block;
-  padding: 9px 15px;
+    padding-top:10px;
 }
 .message-center a:hover {
   background: #f7fafc;

@@ -42,7 +42,8 @@ class KabidController extends Controller
     {
 
        $rules = array(
-            'name' => ['required','unique:kepala_bidangs']            
+            'name' => ['required','unique:kepala_bidangs'],
+            'name.required' => ['nama jabatan wajib diisi.']           
         );
 
         $validator = Validator::make ( $request->all(), $rules);

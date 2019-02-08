@@ -11,7 +11,7 @@
                 <div class="row bg-title">
                     <!-- .page title -->
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Edit Data Akun</h4>
+                        <h4 class="page-title">Edit Data Jabatan</h4>
                     </div>
                     <!-- /.page title -->
                     
@@ -19,8 +19,8 @@
 
                 <div class="col-md-12">
                          <div class="white-box">
-                            <h3 class="box-title m-b-0">Form with right icon</h3>
-                            <p class="text-muted m-b-30 font-13"> Use Bootstrap's predefined grid classes for horizontal form </p>
+                            <h3 class="box-title m-b-0">Form edit nama jabatan</h3>
+                            <p class="text-muted m-b-30 font-13"> Isi form edit untuk mengubah nama jabatan </p>
                              @if($errors->count() > 0)
                         <div class="alert alert-danger alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -33,7 +33,7 @@
                                 {{method_field('patch')}}
                                 {{csrf_field()}}
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1" class="col-sm-3 control-label">Nama</label>
+                                    <label for="exampleInputEmail1" class="col-sm-3 control-label">Nama Jabatan</label>
                                     <div class="col-sm-9">
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="exampleInputNama" placeholder="Masukkan Nama" name="name" value="{{$data->name}}">
@@ -42,15 +42,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group m-b-0">
-                                    <div class="col-sm-offset-3 col-sm-9 text-right">
-                                        <button type="submit" class="btn btn-info waves-effect waves-light m-t-10">Perbarui</button>
+                                    <div class="col-sm-offset-4 col-sm-8 text-right">
+                                        <button type="submit" class="btn btn-info waves-effect waves-light">Perbarui</button>
+                                        <a href="{{route('admin.jabatan')}}" class="btn btn-info waves-effect waves-light">Kembali</a>
                                     </div>
                                 </div>
-                                  <div class="form-group m-b-0">
-                                    <div class="col-sm-offset-3 col-sm-9 text-right">
-                                        <a href="{{route('admin.jabatan')}}" class="btn btn-info waves-effect waves-light m-t-10">Kembali</a>
-                                    </div>
-                                </div>
+                                
                             </form>
                         </div>
                     </div>

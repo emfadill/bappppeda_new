@@ -1,69 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyB-x5c5XoOcBFLlkO9lCDVH0QymiX2xkp0",
-            authDomain: "bappppeda.firebaseapp.com",
-            databaseURL: "https://bappppeda.firebaseio.com",
-            projectId: "bappppeda",
-            storageBucket: "bappppeda.appspot.com",
-            messagingSenderId: "1050384502816"
-        };
-        firebase.initializeApp(config);
-    </script>
-    <!-- Firebase App is always required and must be first -->
-    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-messaging.js"></script>
 
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script> -->
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-messaging.js"></script>
+    <link rel="manifest" href="{{asset('manifest.json')}}">
+    <!-- <script src="{{asset('firebase-messaging-sw.js')}}"></script> -->
+    <script src="{{asset('main.js')}}"></script>
+    
     <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="emfadill">
-<link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/plugins/images/logo_bpd.ico')}}">
-<meta name="csrf-token" content="{{ csrf_token() }}">
-<title>@yield('title')</title>
-<!-- Bootstrap Core CSS -->
- <link rel="stylesheet" type="text/css" href="/pathto/css/sweetalert.css">
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<link href="{{asset('admin/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
-<link href="{{asset('admin/plugins/bower_components/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
-<link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
-<!-- Wizard CSS -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="emfadill">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/plugins/images/logo_bpd.ico')}}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@yield('title')</title>
+    <!-- Bootstrap Core CSS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="{{asset('admin/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('admin/plugins/bower_components/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <!-- Wizard CSS -->
     <link href="{{asset('admin/plugins/bower_components/jquery-wizard-master/css/wizard.css')}}" rel="stylesheet">
-<!-- This is Sidebar menu CSS -->
-<link href="{{asset('admin/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css')}}" rel="stylesheet">
-<link rel="stylesheet" href="{{asset('admin/plugins/bower_components/dropify/dist/css/dropify.min.css')}}">
-<!-- animation CSS -->
-<link href="{{asset('admin/css/animate.css')}}" rel="stylesheet">
-<!-- Custom CSS -->
-<link href="{{asset('admin/css/style.css')}}" rel="stylesheet">
-<!-- color CSS -->
-<link href="{{asset('admin/css/colors/blue.css')}}" id="theme"  rel="stylesheet">
-<!-- Date picker plugins css -->
-<link href="{{asset('admin/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.css')}}" rel="stylesheet" type="text/css" />
-<!-- Daterange picker plugins css -->
-<link href="{{asset('admin/plugins/bower_components/timepicker/bootstrap-timepicker.min.css')}}" rel="stylesheet">
-<link href="{{asset('admin/plugins/bower_components/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
-<!-- page CSS -->
-<link href="{{asset('admin/plugins/bower_components/custom-select/custom-select.css')}}" rel="stylesheet" type="text/css" />
-<link href="{{asset('admin/plugins/bower_components/clockpicker/dist/jquery-clockpicker.min.css')}}" rel="stylesheet">
-<link href="{{asset('admin/plugins/bower_components/switchery/dist/switchery.min.css')}}" rel="stylesheet" />
-<link href="{{asset('admin/plugins/bower_components/bootstrap-select/bootstrap-select.min.css')}}" rel="stylesheet" />
-<link href="{{asset('admin/plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css')}}" rel="stylesheet" />
-<link href="{{asset('admin/plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css')}}" rel="stylesheet" />
-<link href="{{asset('admin/plugins/bower_components/multiselect/css/multi-select.css')}}" rel="stylesheet" type="text/css" />
+    <!-- This is Sidebar menu CSS -->
+    <link href="{{asset('admin/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('admin/plugins/bower_components/dropify/dist/css/dropify.min.css')}}">
+    <!-- animation CSS -->
+    <link href="{{asset('admin/css/animate.css')}}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{asset('admin/css/style.css')}}" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="{{asset('admin/css/colors/blue.css')}}" id="theme"  rel="stylesheet">
+    <!-- Date picker plugins css -->
+    <link href="{{asset('admin/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- Daterange picker plugins css -->
+    <link href="{{asset('admin/plugins/bower_components/timepicker/bootstrap-timepicker.min.css')}}" rel="stylesheet">
+    <link href="{{asset('admin/plugins/bower_components/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
+    <!-- page CSS -->
+    <link href="{{asset('admin/plugins/bower_components/custom-select/custom-select.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('admin/plugins/bower_components/clockpicker/dist/jquery-clockpicker.min.css')}}" rel="stylesheet">
+    <link href="{{asset('admin/plugins/bower_components/switchery/dist/switchery.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('admin/plugins/bower_components/bootstrap-select/bootstrap-select.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('admin/plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css')}}" rel="stylesheet" />
+    <link href="{{asset('admin/plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('admin/plugins/bower_components/multiselect/css/multi-select.css')}}" rel="stylesheet" type="text/css" />
 
     {{--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>--}}
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body class="fix-sidebar fix-header">
     <!-- Preloader -->
@@ -95,28 +88,54 @@
                 <!-- This is the message dropdown -->
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li class="dropdown">
-                        <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#">
+
+                        <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" id="notif">
                             <i class="icon-envelope"></i>
-                            <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
+                            {{--<div class="notify"><span class="heartbit"></span><span class="point"></span></div>--}}
+
+                           <div id="notif_baru">
+                               <script type="text/javascript">
+
+                                   localStorage.setItem("NOTIF", 0);
+                                   setInterval(function () {
+
+
+                                   var notif_masuk = localStorage.getItem("NOTIF");
+                                   if(notif_masuk == 1){
+                                       var notif_a = "<div class='notify'><span class='heartbit'></span><span class='point'></span></div>";
+                                       document.getElementById("notif_baru").innerHTML = notif_a;
+                                       /*document.write(notif_a);*/
+
+                                   } else {
+                                       document.getElementById("notif_baru").innerHTML = "<div class='notify'><span class=''></span><span class=''></span></div>";
+                                       // document.body.innerHTML = "coba";
+                                   }
+
+                                   },1000);
+                               </script>
+                           </div>
+
+                            <div class="notify"><span class=""></span><span class=""></span></div>
                         </a>
                         <!-- .dropdown-messages -->
                         <ul class="dropdown-menu mailbox animated bounceInDown">
                             <li>
-                                <div class="drop-title">You have 4 new messages</div>
+                                <div class="drop-title"><h4><span class="label label-info col-md-12 text-center">Surat Masuk / Keluar Terbaru</span></h4></div>
                             </li>
                             <li>
                                 <div class="message-center">
-                                    <a href="#">
-                                        <div class="user-img"> <img src="{{asset('admin/plugins/images/users/pawandeep.jpg')}}" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
-                                        <div class="mail-contnet">
-                                            <h5>Pavan kumar</h5>
-                                            <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span>
+                                    
+                                    <a href="{{ route('admin.home')}}" onclick="clickMessages()" >
+                                        
+                                        <div id="messages">
+                                            
                                         </div>
                                     </a>
+                                    
                                 </div>
                             </li>
                             <li>
-                                <a class="text-center" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="fa fa-angle-right"></i> </a>
+                                <a class="text-center" href="javascript:void(0);" id="messages" onclick="clearMessages()"> <strong>Hapus Notifikasi</strong> <i class="fa fa-angle-right"></i> </a>
                             </li>
                         </ul>
                         <!-- /.dropdown-messages -->
@@ -181,8 +200,8 @@
                         <ul class="nav nav-second-level">
                             <li><a href="{{route('admin.pengaturan-akun')}}" class="waves-effect"><i data-icon="&#xe005;" class="linea-icon linea-basic fa-fw"></i>Pengaturan Akun</a></li>
                             <li><a href="{{route('admin.jabatan')}}"><i data-icon=")" class="linea-icon linea-basic fa-fw"></i>Konfigurasi Jabatan</a></li>
-                            <li><a href="{{route('admin.kabid')}}"><i data-icon=")" class="linea-icon linea-basic fa-fw"></i>Konfigurasi Kabid</a></li>
-                            <li><a href="{{route('admin.subid')}}"><i data-icon=")" class="linea-icon linea-basic fa-fw"></i>Konfigurasi Subid</a></li>
+                            <li><a href="{{route('admin.kabid')}}"><i data-icon=")" class="linea-icon linea-basic fa-fw"></i>Konfigurasi Kepala Bidang</a></li>
+                            <li><a href="{{route('admin.subid')}}"><i data-icon=")" class="linea-icon linea-basic fa-fw"></i>Konfigurasi Sub Bidang</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -195,7 +214,7 @@
 
         </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2017 &copy; Pixel Admin brought to you by wrappixel.com </footer>
+            <footer class="footer text-center"> 2019 &copy; BAPPPPEDA </footer>
         </div>
         <!-- /#page-wrapper -->
     </div>
@@ -240,7 +259,8 @@
 <script src="{{asset('admin/plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
 <!-- Clock Plugin JavaScript -->
 <script src="{{asset('admin/plugins/bower_components/clockpicker/dist/jquery-clockpicker.min.js')}}"></script>
-<script>
+
+    <script>
     $(document).ready(function() {
         // Basic
         $('.dropify').dropify();
@@ -396,92 +416,93 @@
 <script src="{{asset('admin/plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
  <script>
     $(document).ready(function() {
-        $('#myTable1').DataTable();
-        $(document).ready(function() {
-            var table = $('#example').DataTable({
-                "columnDefs": [{
-                    "visible": true,
-                    "targets": 2
-                }],
-                "order": [
-                    [2, 'asc']
-                ],
-                "displayLength": 25,
-                "drawCallback": function(settings) {
-                    var api = this.api();
-                    var rows = api.rows({
-                        page: 'current'
-                    }).nodes();
-                    var last = null;
-                    api.column(2, {
-                        page: 'current'
-                    }).data().each(function(group, i) {
-                        if (last !== group) {
-                            $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
-                            last = group;
-                        }
-                    });
-                }
+            $('#myTable1').DataTable();
+            $(document).ready(function () {
+                var table = $('#example').DataTable({
+                    "columnDefs": [{
+                        "visible": true,
+                        "targets": 2
+                    }],
+                    "order": [
+                        [0, 'desc']
+                    ],
+                    "displayLength": 25,
+                    "drawCallback": function (settings) {
+                        var api = this.api();
+                        var rows = api.rows({
+                            page: 'current'
+                        }).nodes();
+                        var last = null;
+                        api.column(2, {
+                            page: 'current'
+                        }).data().each(function (group, i) {
+                            if (last !== group) {
+                                $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+                                last = group;
+                            }
+                        });
+                    }
+                });
+                // Order by the grouping
+                $('#example tbody').on('click', 'tr.group', function () {
+                    var currentOrder = table.order()[0];
+                    if (currentOrder[0] === 2 && currentOrder[1] === 'desc') {
+                        table.order([2, 'asc']).draw();
+                    } else {
+                        table.order([2, 'desc']).draw();
+                    }
+                });
             });
-            // Order by the grouping
-            $('#example tbody').on('click', 'tr.group', function() {
-                var currentOrder = table.order()[0];
-                if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
-                    table.order([2, 'desc']).draw();
-                } else {
-                    table.order([2, 'asc']).draw();
-                }
-            });
-        });
     });
 
+    $(document).ready(function() {
      $('#myTable2').DataTable();
-        $(document).ready(function() {
-            var table = $('#example2').DataTable({
-                "columnDefs": [{
-                    "visible": false,
-                    "targets": 2
-                }],
-                "order": [
-                    [2, 'asc']
-                ],
-                "displayLength": 25,
-                "drawCallback": function(settings) {
-                    var api = this.api();
-                    var rows = api.rows({
-                        page: 'current'
-                    }).nodes();
-                    var last = null;
-                    api.column(2, {
-                        page: 'current'
-                    }).data().each(function(group, i) {
-                        if (last !== group) {
-                            $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
-                            last = group;
-                        }
-                    });
-                }
-            });
-            // Order by the grouping
-            $('#example tbody').on('click', 'tr.group', function() {
-                var currentOrder = table.order()[0];
-                if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
-                    table.order([2, 'desc']).draw();
-                } else {
-                    table.order([2, 'asc']).draw();
-                }
-            });
+     $(document).ready(function() {
+                var table = $('#example2').DataTable({
+                    "columnDefs": [{
+                        "visible": false,
+                        "targets": 2
+                    }],
+                    /*"order": [
+                        [2, 'desc']
+                    ],*/
+                    "displayLength": 25,
+                    "drawCallback": function (settings) {
+                        var api = this.api();
+                        var rows = api.rows({
+                            page: 'current'
+                        }).nodes();
+                        var last = null;
+                        api.column(2, {
+                            page: 'current'
+                        }).data().each(function (group, i) {
+                            if (last !== group) {
+                                $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+                                last = group;
+                            }
+                        });
+                    }
+                });
+                // Order by the grouping
+                $('#example tbody').on('click', 'tr.group', function () {
+                    var currentOrder = table.order()[0];
+                    if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+                        table.order([2, 'desc']).draw();
+                    } else {
+                        table.order([2, 'asc']).draw();
+                    }
+                });
 
-            $('#example2 tbody').on('click', 'tr.group', function() {
-                var currentOrder = table.order()[0];
-                if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
-                    table.order([2, 'desc']).draw();
-                } else {
-                    table.order([2, 'asc']).draw();
-                }
-            });
-        });
-
+                $('#example2 tbody').on('click', 'tr.group', function () {
+                    var currentOrder = table.order()[0];
+                    if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+                        table.order([2, 'desc']).draw();
+                    } else {
+                        table.order([2, 'asc']).draw();
+                    }
+                });
+              });
+    });
     $(document).ready(function() {
         $('#myTable7').DataTable();
         $(document).ready(function() {
@@ -490,9 +511,9 @@
                     "visible": false,
                     "targets": 2
                 }],
-                "order": [
-                    [2, 'asc']
-                ],
+                /*"order": [
+                    [2, 'desc']
+                ],*/
                 "displayLength": 25,
                 "drawCallback": function(settings) {
                     var api = this.api();
@@ -553,14 +574,6 @@
     if (/mobile/i.test(navigator.userAgent)) {
         $('input').prop('readOnly', true);
     }
-    // Colorpicker
-    $(".colorpicker").asColorPicker();
-    $(".complex-colorpicker").asColorPicker({
-        mode: 'complex'
-    });
-    $(".gradient-colorpicker").asColorPicker({
-        mode: 'gradient'
-    });
     // Date Picker
     jQuery('.mydatepicker, #datepicker').datepicker();
     $('#datepicker-autoclose').datepicker({

@@ -10,6 +10,9 @@ class SuratMasuk extends Model
         'indeks', 'tgl_penyelesaian', 'dari','perihal','tgl_no_suratmasuk','tgl_suratmasuk','jenis_surat','instruksi','kepada','status','dokumen','url_dokumen','disposisi','url_disposisi',
     ];
 
-    
+    /*public function get_user()
+    {
+        return $this->belongsTo('App\Component\Model\User','user_id','id');
+    }*/
 
 }

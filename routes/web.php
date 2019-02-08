@@ -78,12 +78,8 @@ Route::get('/konfigurasi-subid/edit/{id}', 'Admin\SubidController@edit')->name('
 Route::patch('/konfigurasi-subid/update/{id}', 'Admin\SubidController@update')->name('admin.subid.update');
 Route::delete('/konfigurasi-subid/delete/{id}', 'Admin\SubidController@destroy')->name('admin.subid.delete');
 
-//notifikasi
-Route::get('/notif', 'Admin\FirebaseController@index');
 
 //post-notif
 Route::resource('post', 'PostController');
 
 Route::get('/suratmasuk/printPDF', 'Admin\AdminController@printPDF');
-Route::get('PrintPDFController', 'PrintPDFController@printFile');
-Route::any('WebClientPrintController', 'WebClientPrintController@processRequest');

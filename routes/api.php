@@ -53,9 +53,13 @@ Route::group(['prefix' => 'v1' , 'middleware' => 'cors'], function() {
         Route::get('/surat-masuk-cari','Api\SuratMasukController@search_dokumen');
         Route::get('/surat-keluar-cari','Api\SuratKeluarController@search_dokumen');
 
-        //search per user
+        //search per user Kabid
         Route::get('/spesifik/surat-masuk/cari','Api\SuratMasukController@search_dokumen_spesifik');
         Route::get('/spesifik/surat-keluar/cari','Api\SuratKeluarController@search_dokumen_spesifik');
+
+        //search per user Subid
+        Route::get('/spesifik/surat-masuk/subid/cari','Api\SuratMasukController@search_dokumen_spesifik_subid');
+        Route::get('/spesifik/surat-keluar/subid/cari','Api\SuratKeluarController@search_dokumen_spesifik_subid');
 
         //disposisi-masuk-detail-dari-surat-masuk        
         Route::get('/surat-masuk-disposisi-kabid/{id}','Api\DisposisiMasukKabidController@viewDisposisiKabid');
