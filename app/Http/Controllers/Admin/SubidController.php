@@ -34,7 +34,7 @@ class SubidController extends Controller
     {
         $kabids = KepalaBidang::count();
         $jum = $kabids - 2;
-        $kabid = KepalaBidang::skip(2)->take($jum)->get();
+        $kabid = KepalaBidang::all();
         return view('admin.subid.add-subid',compact('kabid'));
     }
 

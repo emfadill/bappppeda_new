@@ -615,32 +615,5 @@
     });
     </script>
 
-    <script type="text/javascript">
-
-        var wcppPingTimeout_ms = 10000; //10 sec
-        var wcppPingTimeoutStep_ms = 500; //0.5 sec
-
-
-        function wcppDetectOnSuccess(){
-            // WCPP utility is installed at the client side
-            // redirect to WebClientPrint sample page
-
-            // get WCPP version
-            var wcppVer = arguments[0];
-            if(wcppVer.substring(0, 1) == "4")
-                window.location.href = '{{action('Admin\AdminController@printPDF')}}';
-            else //force to install WCPP v4.0
-                wcppDetectOnFailure();
-        }
-
-        function wcppDetectOnFailure() {
-            // It seems WCPP is not installed at the client side
-            // ask the user to install it
-            $('#msgInProgress').hide();
-            $('#msgInstallWCPP').show();
-        }
-
-    </script>
-
 </body>
 </html>
