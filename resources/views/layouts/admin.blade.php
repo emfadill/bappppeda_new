@@ -423,9 +423,9 @@
                         "visible": true,
                         "targets": 2
                     }],
-                    "order": [
+                    /*"order": [
                         [0, 'desc']
-                    ],
+                    ],*/
                     "displayLength": 25,
                     "drawCallback": function (settings) {
                         var api = this.api();
@@ -461,7 +461,7 @@
                 var table = $('#example2').DataTable({
                     "columnDefs": [{
                         "visible": false,
-                        "targets": 2
+                        "targets": 2,
                     }],
                     /*"order": [
                         [2, 'desc']
